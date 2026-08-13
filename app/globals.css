@@ -1,0 +1,2949 @@
+/* Next.js global additions */
+html {
+    scroll-behavior: smooth;
+}
+body {
+    margin: 0;
+}
+button {
+    font-family: inherit;
+}
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        scroll-behavior: smooth;
+
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        background: #f5f5f5;
+       
+    }
+
+    /* =========================
+   MOBILE RESPONSIVE
+   ========================= */
+
+@media (max-width: 768px) {
+
+    body {
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    /* Navbar */
+    .navbar {
+        width: 100%;
+        height: auto;
+        padding: 15px 20px;
+        flex-wrap: wrap;
+    }
+
+    .navbar ul {
+        display: none;
+    }
+
+    /* Containers */
+    .container,
+    section {
+        width: 100%;
+        padding-left: 20px;
+        padding-right: 20px;
+        box-sizing: border-box;
+    }
+
+    /* Headings */
+    h1 {
+        font-size: 36px;
+    }
+
+    h2 {
+        font-size: 32px;
+    }
+
+    h3 {
+        font-size: 24px;
+    }
+
+    /* Images */
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* Flex layouts */
+    .row,
+    .cards,
+    .features,
+    .testimonials {
+        flex-direction: column;
+    }
+
+    /* Cards */
+    .card {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+
+    /* =========================
+   NAVBAR
+========================= */
+
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    width: 100%;
+    height: 70px;
+
+    background: #ffffff;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 10px 55px;
+    box-sizing: border-box;
+
+    border-bottom: 2px solid #e5e5e5;
+}
+
+/* =========================
+   LOGO
+========================= */
+
+.logo {
+    display: flex;
+    align-items: center;
+
+    flex-shrink: 0;
+}
+
+.logo img {
+    width: 100px;
+    height: 50px;
+
+    object-fit: contain;
+
+    display: block;
+}
+
+
+/* =========================
+   NAV LINKS
+========================= */
+
+.nav-links {
+    display: flex;
+    align-items: center;
+
+    gap: 35px;
+
+    list-style: none;
+
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links a {
+    color: #000000;
+
+    text-decoration: none;
+
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+
+    white-space: nowrap;
+
+    transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+    color: #ff2693;
+}
+
+
+/* =========================
+   NAV BUTTON
+========================= */
+
+.nav-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 150px;
+    height: 44px;
+
+    padding: 0;
+
+    background: #ff2693;
+    color: #ffffff;
+
+    border-radius: 25px;
+
+    text-decoration: none;
+
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+
+    white-space: nowrap;
+
+    box-sizing: border-box;
+
+    transition: 0.2s ease;
+}
+
+.nav-btn:hover {
+    background: #ff2693;
+    color: #ffffff;
+
+    transform: translateY(-1px);
+}
+
+   
+    /* .navbar {
+        height: 70px;
+        background: #ffffff;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 8%;
+        border: #222;
+    }
+
+    
+    .logo {
+        display: flex;
+        align-items: center;
+    }
+
+    .logo img {
+        width: 100px;
+        height: 50px;
+        object-fit: contain;
+        display: block;
+    }
+
+    
+    .nav-links {
+        display: flex;
+        gap: 35px;
+        list-style: none;
+    }
+
+    .nav-links a {
+        color: rgb(0, 0, 0);
+        text-decoration: none;
+        font-size: 16px;
+        transition: 0.3s;
+    }
+
+    .nav-links a:hover {
+        color: #ff0088;
+    }
+
+   
+    .nav-btn {
+        padding: 10px 20px;
+        background: #ff2693;
+        color: #111827;
+        border-radius: 25px;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    .nav-btn:hover {
+        background: white;
+    } */
+
+
+    .hero {
+    position: relative;
+    display: flex;
+
+    width: 100%;
+    height: 550px;
+
+    background: white;
+    overflow: hidden;
+}
+
+/* LEFT SIDE */
+.hero-content {
+    width: 52%;
+
+    padding-left: 55px;
+    padding-top: 80px;
+
+    position: relative;
+    z-index: 5;
+}
+
+.hero-content h1 {
+    margin: 0 0 20px;
+
+    font-size: 64px;
+    line-height: 1.15;
+    font-weight: 700;
+    color: #171717;
+}
+
+.hero-content p {
+    max-width: 650px;
+
+    margin: 0 0 25px;
+
+    font-size: 20px;
+    line-height: 1.5;
+    color: #222;
+}
+
+/* BUTTONS */
+.hero-buttons {
+    display: flex;
+    gap: 12px;
+}
+
+.download-btn,
+.explore-btn {
+    width: 350px;
+    height: 54px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.download-btn {
+    background: #ff2693;
+    color: white;
+}
+
+.explore-btn {
+    background: white;
+    color: #222;
+    border: 2px solid #ff2693;
+}
+
+
+/* RIGHT SIDE */
+.circle-container {
+    position: absolute;
+
+    right: 0;
+    top: 0;
+
+    width: 50%;
+    height: 100%;
+
+    overflow: hidden;
+}
+
+
+/* PINK CIRCLE */
+.pink-circle {
+    position: absolute;
+
+    width: 740px;
+    height: 740px;
+
+    background: #ff2693;
+
+    border-radius: 50%;
+
+    top: 50px;
+    right: -120px;
+
+    z-index: 1;
+}
+
+
+/* IMAGE */
+.hero-image {
+    position: absolute;
+
+    width: 500px;
+    height: auto;
+
+    right: 20px;
+    top: 140px;
+
+    z-index: 2;
+}
+
+
+.safety-section {
+    width: 100%;
+    height: 700px;
+
+    display: flex;
+
+    background: #ffffff;
+
+    overflow: hidden;
+}
+
+
+/* =========================
+   LEFT SIDE
+========================= */
+
+.safety-left {
+    position: relative;
+
+    width: 50%;
+    height: 100%;
+
+    overflow: hidden;
+}
+
+.safety-circle {
+    position: absolute;
+
+    width: 740px;
+    height: 740px;
+
+    background: #ff2693;
+
+    border-radius: 50%;
+
+    left: -80px;
+    top: -150px;
+}
+
+
+/* TEXT */
+
+.safety-content {
+    position: absolute;
+
+    top: 65px;
+    left: 55px;
+
+    z-index: 2;
+
+    color: white;
+}
+
+.safety-content h2 {
+    margin: 0 0 8px;
+
+    font-size: 60px;
+    line-height: 1.1;
+    font-weight: 700;
+}
+
+.safety-content p {
+    width: 550px;
+
+    margin: 0;
+
+    font-size: 24px;
+    line-height: 1.4;
+}
+
+
+/* WOMAN */
+
+.safety-woman {
+    position: absolute;
+
+    z-index: 3;
+
+    width: 450px;
+    height: auto;
+
+    left: 0;
+    bottom: -5px;
+}
+
+
+/* =========================
+   RIGHT SIDE
+========================= */
+
+.safety-right {
+    width: 50%;
+
+    padding: 65px 55px 40px;
+
+    box-sizing: border-box;
+}
+
+
+/* CARDS */
+
+.safety-cards {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 32px;
+}
+
+.safety-card {
+    height: 225px;
+
+    padding: 38px 36px;
+
+    box-sizing: border-box;
+
+    background: #f3f3f3;
+
+    border-radius: 24px;
+}
+
+.safety-card h3 {
+    margin: 0 0 18px;
+
+    font-size: 32px;
+    line-height: 1.15;
+    font-weight: 600;
+
+    color: #171717;
+}
+
+.safety-card p {
+    margin: 0;
+
+    font-size: 22px;
+    line-height: 1.35;
+
+    color: #222222;
+}
+
+
+/* READ MORE */
+
+.read-more {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 343px;
+    height: 54px;
+
+    margin: 47px auto 0;
+
+    background: #ff2693;
+
+    border-radius: 11px;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 21px;
+}
+
+
+/* ================================
+   RIDES SECTION
+================================ */
+
+.rides-section {
+    width: 100%;
+    padding: 65px 6.5% 70px;
+    box-sizing: border-box;
+    background: #ffffff;
+}
+
+
+/* ================================
+   HEADING
+================================ */
+
+.rides-title {
+    margin: 0 0 48px;
+
+    text-align: center;
+
+    font-family: Arial, sans-serif;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 1.2;
+
+    color: #171717;
+}
+
+
+/* ================================
+   2 x 2 GRID
+================================ */
+
+.rides-grid {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 34px 45px;
+
+    max-width: 1250px;
+
+    margin: 0 auto;
+}
+
+
+/* ================================
+   CARD
+================================ */
+
+.ride-card {
+    position: relative;
+
+    height: 235px;
+
+    background: #f3f3f3;
+
+    border-radius: 24px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 3px 4px rgba(0, 0, 0, 0.18);
+
+    box-sizing: border-box;
+}
+
+
+/* ================================
+   TEXT
+================================ */
+
+.ride-info {
+    position: absolute;
+
+    left: 44px;
+    top: 32px;
+
+    z-index: 2;
+}
+
+.ride-info h3 {
+    margin: 0 0 15px;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 36px;
+    font-weight: 700;
+
+    line-height: 1.1;
+
+    color: #171717;
+}
+
+.ride-info p {
+    margin: 0;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 24px;
+    font-weight: 400;
+
+    line-height: 1.4;
+
+    color: #222222;
+}
+
+
+/* ================================
+   VEHICLE IMAGES
+================================ */
+
+.ride-image {
+    position: absolute;
+
+    object-fit: contain;
+
+    z-index: 1;
+}
+
+
+/* ACTIVA */
+
+.activa-image {
+    width: 310px;
+    height: 220px;
+
+    right: 5px;
+    bottom: -5px;
+}
+
+
+/* AUTO */
+
+.auto-image {
+    width: 330px;
+    height: 235px;
+
+    right: -5px;
+    bottom: -5px;
+}
+
+
+/* E-RICKSHAW */
+
+.erickshaw-image {
+    width: 330px;
+    height: 235px;
+
+    right: -5px;
+    bottom: -5px;
+}
+
+
+/* CAB */
+
+.cab-image {
+    width: 350px;
+    height: 235px;
+
+    right: -10px;
+    bottom: -5px;
+}
+
+
+/* ================================
+   READ MORE BUTTON
+================================ */
+
+/* .rides-button {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 280px;
+    height: 54px;
+
+    margin: 45px auto 0;
+
+    background: #ff2693;
+
+    border-radius: 11px;
+
+    color: #ffffff;
+
+    font-family: Arial, sans-serif;
+    font-size: 21px;
+    font-weight: 500;
+
+    text-decoration: none;
+
+    transition: 0.2s;
+}
+
+.rides-button:hover {
+    transform: translateY(-2px);
+} */
+
+/* =========================
+   BY WOMEN FOR WOMEN
+========================= */
+
+.women-section {
+    width: 100%;
+    min-height: 800px;
+
+    background: #ffffff;
+
+    overflow: hidden;
+
+    position: relative;
+
+    text-align: center;
+
+    padding-top: 65px;
+
+    box-sizing: border-box;
+}
+
+
+/* CONTENT */
+
+.women-content {
+    position: relative;
+    z-index: 2;
+}
+
+.women-content h2 {
+    margin: 0 0 14px;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 48px;
+    font-weight: 700;
+
+    line-height: 1.2;
+
+    color: #171717;
+}
+
+
+.women-content p {
+    margin: 0 auto;
+
+    max-width: 1000px;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 25px;
+    line-height: 1.35;
+
+    color: #222222;
+}
+
+
+/* BUTTON */
+
+.women-btn {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 343px;
+    height: 53px;
+
+    margin: 32px auto 0;
+
+    background: #ff2693;
+
+    border-radius: 11px;
+
+    color: white;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 21px;
+    font-weight: 400;
+
+    text-decoration: none;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================
+   WOMEN IMAGE
+========================= */
+
+.women-image-container {
+    position: absolute;
+
+    left: 0;
+    right: 0;
+
+    bottom: 0;
+
+    width: 100%;
+    height: 3800px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: flex-end;
+
+    overflow: hidden;
+
+    z-index: 1;
+}
+
+
+.women-image {
+    width: 100%;
+    max-width: 1450px;
+
+    height: auto;
+
+    object-fit: contain;
+
+    object-position: bottom center;
+
+    display: block;
+}
+
+
+/* =========================
+   WHY DRIVE SECTION
+========================= */
+
+.why-section {
+    width: 100%;
+    min-height: 580px;
+
+    background: #ffffff;
+
+    padding: 65px 55px;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================
+   HEADING
+========================= */
+
+.why-title {
+    margin: 0 0 48px;
+
+    text-align: center;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 48px;
+    line-height: 1.2;
+    font-weight: 700;
+
+    color: #171717;
+}
+
+
+/* =========================
+   CARDS CONTAINER
+========================= */
+
+.why-cards {
+    width: 100%;
+    max-width: 1330px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 35px;
+}
+
+
+/* =========================
+   CARD
+========================= */
+
+.why-card {
+    height: 345px;
+
+    background: #f3f3f3;
+
+    border-radius: 23px;
+
+    box-sizing: border-box;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    text-align: center;
+
+    padding: 35px 25px;
+}
+
+
+/* =========================
+   ICON
+========================= */
+
+.why-icon {
+    width: 105px;
+    height: 105px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 12px;
+
+    color: #222222;
+}
+
+.why-icon svg {
+    width: 100px;
+    height: 100px;
+}
+
+
+/* =========================
+   CARD TITLE
+========================= */
+
+.why-card h3 {
+    margin: 0 0 16px;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 36px;
+
+    line-height: 1.15;
+
+    font-weight: 700;
+
+    color: #171717;
+}
+
+
+/* =========================
+   CARD DESCRIPTION
+========================= */
+
+.why-card p {
+    margin: 0;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 21px;
+
+    line-height: 1.4;
+
+    color: #222222;
+}
+
+
+
+
+/* .testimonials-section {
+    width: 100%;
+    min-height: 570px;
+
+    background: #ffffff;
+
+    padding-top: 45px;
+
+  
+
+    box-sizing: border-box;
+}
+
+
+
+
+.testimonials-section h2 {
+    margin: 0 0 78px;
+
+    text-align: center;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 48px;
+    line-height: 1.2;
+
+    font-weight: 700;
+
+    color: #171717;
+}
+
+
+
+
+.testimonial-wrapper {
+    width: 100%;
+
+   
+}
+
+
+.testimonial-track {
+    display: flex;
+
+    gap: 155px;
+
+    width: max-content;
+
+    transform: translateX(55px);
+}
+
+
+
+
+.testimonial-card {
+    position: relative;
+
+    flex: 0 0 478px;
+
+    height: 310px;
+
+    background: #f3f3f3;
+
+    border-radius: 14px;
+
+    box-shadow:
+        0 3px 4px rgba(0, 0, 0, 0.22);
+
+    box-sizing: border-box;
+
+    padding: 40px;
+}
+
+
+
+
+.quote {
+    position: absolute;
+
+    left: 5px;
+    top: -30px;
+
+    font-family: Georgia, serif;
+
+    font-size: 125px;
+
+    line-height: 1;
+
+    font-weight: 700;
+
+    color: #ff1389;
+
+    z-index: 5;
+}
+
+
+
+
+.testimonial-text {
+    position: relative;
+
+    z-index: 2;
+
+    width: 300px;
+}
+
+
+.testimonial-text h3 {
+    margin: 0 0 12px;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 36px;
+
+    line-height: 1.15;
+
+    font-weight: 700;
+
+    color: #171717;
+}
+
+
+
+
+.stars {
+    margin-bottom: 12px;
+
+    font-size: 31px;
+
+    letter-spacing: 4px;
+
+    color: #ffc400;
+}
+
+
+
+
+.testimonial-text p {
+    margin: 0;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 21px;
+
+    line-height: 1.42;
+
+    color: #222222;
+}
+
+
+
+
+.customer-image {
+    position: absolute;
+
+    width: 220px;
+    height: 220px;
+
+    right: -110px;
+    top: 43px;
+
+    z-index: 3;
+}
+
+
+
+
+.customer-image .pink-circle {
+    position: absolute;
+
+    width: 220px;
+    height: 220px;
+right: -10px;
+top: 10px;
+    background: #ff2693;
+
+    border-radius: 50%;
+}
+
+
+
+
+.customer-image img {
+    position: absolute;
+
+    width: 180px;
+    height: 210px;
+
+    object-fit: contain;
+
+    left: 20px;
+    bottom: 0;
+
+    z-index: 2;
+}
+
+
+
+
+.testimonial-dots {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 6px;
+
+    margin-top: 25px;
+}
+
+
+.testimonial-dots span {
+    width: 15px;
+    height: 15px;
+
+    border-radius: 50%;
+
+    background: #eeeeee;
+}
+
+
+.testimonial-dots span.active {
+    background: #777777;
+}
+ */
+
+
+/* =========================
+   TESTIMONIAL SECTION
+========================= */
+
+.testimonials-section {
+    width: 100%;
+    min-height: 570px;
+
+    background: #ffffff;
+
+    padding-top: 45px;
+
+    box-sizing: border-box;
+
+    overflow: hidden;
+}
+
+
+/* =========================
+   HEADING
+========================= */
+
+.testimonials-section h2 {
+    margin: 0 0 78px;
+
+    text-align: center;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 48px;
+    line-height: 1.2;
+
+    font-weight: 700;
+
+    color: #171717;
+}
+
+
+/* =========================
+   CAROUSEL WRAPPER
+========================= */
+
+.testimonial-wrapper {
+    width: 100%;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    scroll-behavior: smooth;
+
+    -webkit-overflow-scrolling: touch;
+
+    scrollbar-width: none;
+}
+
+/* Hide scrollbar - Chrome, Edge, Safari */
+.testimonial-wrapper::-webkit-scrollbar {
+    display: none;
+}
+
+
+/* =========================
+   CAROUSEL TRACK
+========================= */
+
+.testimonial-track {
+    display: flex;
+
+    gap: 155px;
+
+    width: max-content;
+
+    padding-left: 55px;
+    padding-right: 55px;
+
+    transform: none;
+}
+
+
+/* =========================
+   CARD
+========================= */
+
+.testimonial-card {
+    position: relative;
+
+    flex: 0 0 478px;
+
+    width: 478px;
+    height: 310px;
+
+    background: #f3f3f3;
+
+    border-radius: 14px;
+
+    box-shadow:
+        0 3px 4px rgba(0, 0, 0, 0.22);
+
+    box-sizing: border-box;
+
+    padding: 40px;
+}
+
+
+/* =========================
+   QUOTE
+========================= */
+
+.quote {
+    position: absolute;
+
+    left: 5px;
+    top: -30px;
+
+    font-family: Georgia, serif;
+
+    font-size: 125px;
+
+    line-height: 1;
+
+    font-weight: 700;
+
+    color: #ff1389;
+
+    z-index: 5;
+}
+
+
+/* =========================
+   TEXT
+========================= */
+
+.testimonial-text {
+    position: relative;
+
+    z-index: 2;
+
+    width: 300px;
+}
+
+
+.testimonial-text h3 {
+    margin: 0 0 12px;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 36px;
+
+    line-height: 1.15;
+
+    font-weight: 700;
+
+    color: #171717;
+}
+
+
+/* =========================
+   STARS
+========================= */
+
+.stars {
+    margin-bottom: 12px;
+
+    font-size: 31px;
+
+    letter-spacing: 4px;
+
+    color: #ffc400;
+}
+
+
+/* =========================
+   DESCRIPTION
+========================= */
+
+.testimonial-text p {
+    margin: 0;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 21px;
+
+    line-height: 1.42;
+
+    color: #222222;
+}
+
+
+/* =========================
+   CUSTOMER IMAGE
+========================= */
+
+.customer-image {
+    position: absolute;
+
+    width: 220px;
+    height: 220px;
+
+    right: -110px;
+    top: 43px;
+
+    z-index: 3;
+}
+
+
+/* =========================
+   PINK CIRCLE
+========================= */
+
+.customer-image .pink-circle {
+    position: absolute;
+
+    width: 220px;
+    height: 220px;
+
+    right: -10px;
+    top: 10px;
+
+    background: #ff2693;
+
+    border-radius: 50%;
+}
+
+
+/* =========================
+   PERSON
+========================= */
+
+.customer-image img {
+    position: absolute;
+
+    width: 180px;
+    height: 210px;
+
+    object-fit: contain;
+
+    left: 20px;
+    bottom: 0;
+
+    z-index: 2;
+}
+
+
+/* =========================
+   DOTS
+========================= */
+
+.testimonial-dots {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 6px;
+
+    margin-top: 25px;
+}
+
+
+.testimonial-dots span {
+    width: 15px;
+    height: 15px;
+
+    border-radius: 50%;
+
+    background: #eeeeee;
+}
+
+
+.testimonial-dots span.active {
+    background: #777777;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 900px) {
+
+    .testimonials-section {
+        min-height: auto;
+        padding-top: 35px;
+        padding-bottom: 30px;
+    }
+
+    .testimonials-section h2 {
+        font-size: 40px;
+        margin-bottom: 60px;
+    }
+
+    .testimonial-track {
+        gap: 80px;
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .testimonials-section {
+        min-height: auto;
+
+        padding-top: 30px;
+        padding-bottom: 25px;
+    }
+
+
+    /* Heading */
+
+    .testimonials-section h2 {
+        font-size: 30px;
+
+        margin-bottom: 50px;
+
+        padding: 0 15px;
+    }
+
+
+    /* Scroll Area */
+
+    .testimonial-wrapper {
+        overflow-x: auto;
+        overflow-y: hidden;
+
+        width: 100%;
+    }
+
+
+    /* Track */
+
+    .testimonial-track {
+        gap: 30px;
+
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+
+    /* Card */
+
+    .testimonial-card {
+        flex: 0 0 85vw;
+
+        width: 85vw;
+
+        height: 300px;
+
+        padding: 30px;
+    }
+
+
+    /* Quote */
+
+    .quote {
+        left: 3px;
+        top: -25px;
+
+        font-size: 100px;
+    }
+
+
+    /* Text */
+
+    .testimonial-text {
+        width: 55%;
+    }
+
+
+    .testimonial-text h3 {
+        font-size: 25px;
+
+        margin-bottom: 10px;
+    }
+
+
+    /* Stars */
+
+    .stars {
+        font-size: 23px;
+
+        letter-spacing: 2px;
+
+        margin-bottom: 10px;
+    }
+
+
+    /* Description */
+
+    .testimonial-text p {
+        font-size: 16px;
+
+        line-height: 1.4;
+    }
+
+
+    /* Customer Image */
+
+    .customer-image {
+        width: 150px;
+        height: 150px;
+
+        right: -55px;
+        top: 65px;
+    }
+
+
+    .customer-image .pink-circle {
+        width: 150px;
+        height: 150px;
+
+        right: -5px;
+        top: 5px;
+    }
+
+
+    .customer-image img {
+        width: 125px;
+        height: 145px;
+
+        left: 12px;
+    }
+
+
+    /* Dots */
+
+    .testimonial-dots {
+        margin-top: 20px;
+    }
+
+
+    .testimonial-dots span {
+        width: 10px;
+        height: 10px;
+    }
+}
+
+
+/* =========================
+   MAIN BOX
+========================= */
+
+.download-section {
+    position: relative;
+
+    width: calc(100% - 110px);
+    height: 445px;
+
+    margin: 65px 55px;
+
+    background: #fffdfd;
+
+    border-radius: 28px;
+
+    /* IMPORTANT */
+    overflow: visible;
+
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.18);
+}
+
+
+/* =========================
+   LEFT CONTENT
+========================= */
+
+.download-content {
+    position: relative;
+
+    z-index: 5;
+
+    width: 55%;
+
+    padding-left: 62px;
+    padding-top: 60px;
+
+    box-sizing: border-box;
+}
+
+.download-content h2 {
+    margin: 0 0 18px;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 64px;
+    line-height: 1.12;
+    font-weight: 700;
+
+    color: #212121;
+}
+
+.download-content p {
+    width: 540px;
+
+    margin: 0 0 26px;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 25px;
+    line-height: 1.4;
+
+    color: #222;
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+.download-btn {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 343px;
+    height: 53px;
+
+    background: #ff2693;
+
+    border-radius: 11px;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 21px;
+}
+
+
+/* =========================
+   RIGHT VISUAL
+========================= */
+
+.download-visual {
+    position: absolute;
+
+    right: 0;
+    top: 0;
+
+    width: 55%;
+    height: 100%;
+
+    /* DO NOT HIDE */
+    overflow: visible;
+}
+
+
+/* =========================
+   CIRCLE CLIPPER
+========================= */
+
+.circle-clip {
+    position: absolute;
+
+    right: 0;
+    bottom: 0;
+
+    width: 100%;
+    height: 285px;
+
+    overflow: hidden;
+
+    z-index: 1;
+}
+
+
+/* =========================
+   PINK CIRCLE
+========================= */
+
+.download-circle {
+    position: absolute;
+
+    width: 670px;
+    height: 570px;
+
+    background: #ff2693;
+
+    border-radius: 50%;
+
+    right: 35px;
+    bottom: -285px;
+}
+
+
+/* =========================
+   PHONE
+========================= */
+
+.phone-image {
+    position: absolute;
+
+    width: 430px;
+
+    height: auto;
+
+    right: 125px;
+
+    /*
+       This makes the phone
+       extend above the box
+    */
+    top: -47px;
+
+    z-index: 8;
+}
+
+/* =====================================
+   FOOTER
+===================================== */
+
+.footer {
+    width: 100%;
+
+    background: #ffffff;
+
+    color: #171717;
+
+    padding-top: 35px;
+
+    box-sizing: border-box;
+}
+
+
+/* =====================================
+   TOP AREA
+===================================== */
+
+.footer-top {
+    display: grid;
+
+    grid-template-columns:
+        1.3fr
+        1fr
+        1.5fr
+        2.1fr;
+
+    column-gap: 70px;
+
+    padding: 0 55px 80px;
+
+    box-sizing: border-box;
+}
+
+
+/* =====================================
+   BRAND
+===================================== */
+
+.footer-brand {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+}
+
+
+.footer-logo {
+    width: 185px;
+    height: auto;
+
+    display: block;
+
+    margin-bottom: 15px;
+}
+
+
+.footer-brand p {
+    margin: 0;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 19px;
+
+    line-height: 1.55;
+
+    color: #222222;
+}
+
+
+/* =====================================
+   SOCIAL ICONS
+===================================== */
+
+.social-links {
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    margin-top: 27px;
+}
+
+
+.social-links a {
+    width: 22px;
+    height: 22px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    color: #222222;
+
+    text-decoration: none;
+
+    font-size: 19px;
+
+    transition: 0.2s;
+}
+
+
+.social-links a:hover {
+    color: #ff2693;
+}
+
+
+/* =====================================
+   FOOTER COLUMNS
+===================================== */
+
+.footer-column {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+}
+
+
+.footer-column h3 {
+    margin: 0 0 25px;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 21px;
+
+    line-height: 1.2;
+
+    font-weight: 700;
+
+    color: #171717;
+}
+
+
+.footer-column a {
+    margin-bottom: 16px;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 19px;
+
+    line-height: 1.25;
+
+    color: #222222;
+
+    text-decoration: none;
+}
+
+
+.footer-column a:hover {
+    color: #ff2693;
+}
+
+
+/* =====================================
+   CONTACT DETAILS
+===================================== */
+
+.contact-item {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 14px;
+
+    margin-bottom: 18px;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 18px;
+
+    line-height: 1.4;
+
+    color: #222222;
+}
+
+
+.contact-item i {
+    width: 20px;
+
+    margin-top: 3px;
+
+    font-size: 20px;
+
+    color: #222222;
+}
+
+
+/* =====================================
+   COPYRIGHT
+===================================== */
+
+.footer-bottom {
+    width: 100%;
+
+    border-top: 1px solid #dddddd;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-height: 65px;
+
+    box-sizing: border-box;
+}
+
+
+.footer-bottom p {
+    margin: 0;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 18px;
+
+    color: #222222;
+}
+
+
+.copyright-symbol {
+    margin: 0 5px;
+
+    font-weight: 700;
+}
+
+
+.separator {
+    margin: 0 8px;
+}
+ 
+
+
+/* =========================================================
+   FINAL RESPONSIVE OVERRIDES
+   Keeps the desktop design intact and adapts all sections
+   for tablets and phones.
+   ========================================================= */
+
+html, body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+}
+
+/* ---------- Tablet / smaller laptops ---------- */
+@media (max-width: 1100px) {
+
+    .navbar {
+        padding: 10px 28px;
+    }
+
+    .nav-links {
+        gap: 18px;
+    }
+
+    .nav-links a {
+        font-size: 14px;
+    }
+
+    .nav-btn {
+        width: 125px;
+        font-size: 13px;
+    }
+
+    .hero {
+        height: auto;
+        min-height: 520px;
+    }
+
+    .hero-content {
+        width: 52%;
+        padding: 65px 25px 50px 35px;
+    }
+
+    .hero-content h1 {
+        font-size: clamp(44px, 5vw, 60px);
+    }
+
+    .hero-content p {
+        font-size: 18px;
+    }
+
+    .download-btn,
+    .explore-btn {
+        width: 220px;
+        font-size: 17px;
+    }
+
+    .circle-container {
+        width: 48%;
+    }
+
+    .pink-circle {
+        width: 600px;
+        height: 600px;
+        right: -180px;
+    }
+
+    .hero-image {
+        width: min(430px, 48vw);
+        right: 0;
+        top: 125px;
+    }
+
+    .safety-section {
+        height: auto;
+        min-height: 650px;
+    }
+
+    .safety-content {
+        left: 35px;
+    }
+
+    .safety-content h2 {
+        font-size: 50px;
+    }
+
+    .safety-content p {
+        width: min(90%, 480px);
+        font-size: 20px;
+    }
+
+    .safety-right {
+        padding: 45px 30px;
+    }
+
+    .safety-cards {
+        gap: 18px;
+    }
+
+    .safety-card {
+        height: auto;
+        min-height: 200px;
+        padding: 28px 25px;
+    }
+
+    .safety-card h3 {
+        font-size: 27px;
+    }
+
+    .safety-card p {
+        font-size: 18px;
+    }
+
+    .rides-section {
+        padding-left: 4%;
+        padding-right: 4%;
+    }
+
+    .ride-info {
+        left: 28px;
+    }
+
+    .ride-info h3 {
+        font-size: 30px;
+    }
+
+    .ride-info p {
+        font-size: 19px;
+    }
+
+    .ride-image {
+        max-width: 58%;
+    }
+
+    .why-section {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    .why-cards {
+        gap: 20px;
+    }
+
+    .why-card {
+        height: auto;
+        min-height: 320px;
+    }
+
+    .why-card h3 {
+        font-size: 29px;
+    }
+
+    .why-card p {
+        font-size: 18px;
+    }
+
+    .download-section {
+        width: calc(100% - 60px);
+        margin: 50px 30px;
+    }
+
+    .download-content {
+        padding-left: 40px;
+    }
+
+    .download-content h2 {
+        font-size: 50px;
+    }
+
+    .download-content p {
+        width: min(95%, 480px);
+        font-size: 20px;
+    }
+
+    .phone-image {
+        width: min(360px, 38vw);
+        right: 70px;
+    }
+
+    .footer-top {
+        grid-template-columns: 1.4fr 1fr 1fr;
+        gap: 35px;
+        padding-left: 35px;
+        padding-right: 35px;
+    }
+
+    .footer-brand {
+        grid-column: 1 / -1;
+    }
+}
+
+
+/* ---------- Mobile ---------- */
+@media (max-width: 768px) {
+
+    body {
+        overflow-x: hidden;
+    }
+
+    /* NAVBAR */
+    .navbar {
+        position: sticky;
+        top: 0;
+        height: 70px;
+        min-height: 70px;
+        padding: 8px 18px;
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
+    }
+
+    .logo img {
+        width: 88px;
+        height: 48px;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        width: 100%;
+        padding: 12px 20px 18px;
+        background: #ffffff;
+        border-bottom: 2px solid #e5e5e5;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        box-shadow: 0 8px 18px rgba(0,0,0,.08);
+    }
+
+    .navbar.menu-open .nav-links {
+        display: flex;
+    }
+
+    .nav-links li {
+        width: 100%;
+    }
+
+    .nav-links a {
+        display: block;
+        width: 100%;
+        padding: 13px 5px;
+        font-size: 16px;
+    }
+
+    .navbar .nav-btn {
+        width: auto;
+        min-width: 118px;
+        height: 40px;
+        padding: 0 14px;
+        margin-left: auto;
+        margin-right: 10px;
+        font-size: 13px;
+    }
+
+    .menu-toggle {
+        display: flex;
+        width: 42px;
+        height: 42px;
+        align-items: center;
+        justify-content: center;
+        border: 0;
+        border-radius: 8px;
+        background: #ff2693;
+        color: #ffffff;
+        font-size: 19px;
+        cursor: pointer;
+        flex-shrink: 0;
+    }
+
+    /* HERO */
+    .hero {
+        min-height: 0;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+    }
+
+    .hero-content {
+        width: 100%;
+        padding: 45px 20px 30px;
+        text-align: center;
+        order: 1;
+    }
+
+    .hero-content h1 {
+        font-size: clamp(38px, 10vw, 52px);
+        line-height: 1.08;
+        margin-bottom: 18px;
+    }
+
+    .hero-content p {
+        width: 100%;
+        max-width: 650px;
+        margin: 0 auto 22px;
+        font-size: 17px;
+        line-height: 1.5;
+    }
+
+    .hero-buttons {
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .download-btn,
+    .explore-btn {
+        width: min(100%, 360px);
+        height: 50px;
+        font-size: 17px;
+    }
+
+    .hero .circle-container {
+        position: relative;
+        right: auto;
+        top: auto;
+        width: 100%;
+        height: 330px;
+        order: 2;
+        overflow: hidden;
+    }
+
+    .hero .pink-circle {
+        width: 500px;
+        height: 500px;
+        right: 50%;
+        transform: translateX(50%);
+        top: 45px;
+    }
+
+    .hero-image {
+        width: min(390px, 92vw);
+        right: 50%;
+        transform: translateX(50%);
+        top: 55px;
+    }
+
+    /* SAFETY */
+    .safety-section {
+        width: 100%;
+        min-height: 0;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .safety-left,
+    .safety-right {
+        width: 100%;
+    }
+
+    .safety-left {
+        height: 470px;
+        min-height: 470px;
+    }
+
+    .safety-circle {
+        width: 600px;
+        height: 600px;
+        left: 50%;
+        transform: translateX(-50%);
+        top: -180px;
+    }
+
+    .safety-content {
+        top: 35px;
+        left: 20px;
+        right: 20px;
+        text-align: center;
+    }
+
+    .safety-content h2 {
+        font-size: clamp(38px, 10vw, 52px);
+    }
+
+    .safety-content p {
+        width: 100%;
+        max-width: 500px;
+        margin: 0 auto;
+        font-size: 17px;
+        line-height: 1.45;
+    }
+
+    .safety-woman {
+        width: min(360px, 90vw);
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 0;
+    }
+
+    .safety-right {
+        padding: 35px 20px 45px;
+    }
+
+    .safety-cards {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .safety-card {
+        min-height: 0;
+        height: auto;
+        padding: 25px 22px;
+        border-radius: 18px;
+    }
+
+    .safety-card h3 {
+        font-size: 26px;
+        margin-bottom: 10px;
+    }
+
+    .safety-card p {
+        font-size: 17px;
+    }
+
+    .read-more {
+        width: min(100%, 343px);
+        margin-top: 28px;
+    }
+
+    /* RIDES */
+    .rides-section {
+        padding: 45px 20px 50px;
+    }
+
+    .rides-title {
+        font-size: clamp(32px, 8vw, 42px);
+        margin-bottom: 28px;
+    }
+
+    .rides-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+        width: 100%;
+    }
+
+    .ride-card {
+        height: 205px;
+        border-radius: 18px;
+    }
+
+    .ride-info {
+        left: 22px;
+        top: 25px;
+    }
+
+    .ride-info h3 {
+        font-size: 28px;
+        margin-bottom: 8px;
+    }
+
+    .ride-info p {
+        font-size: 17px;
+    }
+
+    .ride-image {
+        max-width: none;
+    }
+
+    .activa-image,
+    .auto-image,
+    .erickshaw-image,
+    .cab-image {
+        width: 230px;
+        height: 180px;
+        right: -5px;
+        bottom: -5px;
+    }
+
+    /* BY WOMEN */
+    .women-section {
+        min-height: 650px;
+        height: auto;
+        padding: 45px 20px 0;
+    }
+
+    .women-content h2 {
+        font-size: clamp(32px, 8vw, 42px);
+        line-height: 1.15;
+    }
+
+    .women-content p {
+        max-width: 100%;
+        font-size: 17px;
+        line-height: 1.5;
+    }
+
+    .women-content p br {
+        display: none;
+    }
+
+    .women-btn {
+        width: min(100%, 343px);
+        height: 50px;
+        font-size: 18px;
+        margin-top: 24px;
+    }
+
+    .women-image-container {
+        height: 380px;
+        bottom: 0;
+    }
+
+    .women-image {
+        width: 150%;
+        max-width: none;
+        margin-left: -25%;
+    }
+
+    /* WHY DRIVE */
+    .why-section {
+        min-height: 0;
+        padding: 45px 20px 50px;
+    }
+
+    .why-title {
+        font-size: clamp(32px, 8vw, 42px);
+        margin-bottom: 28px;
+    }
+
+    .why-cards {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .why-card {
+        min-height: 0;
+        height: auto;
+        padding: 28px 20px;
+        border-radius: 18px;
+    }
+
+    .why-icon {
+        width: 82px;
+        height: 82px;
+    }
+
+    .why-icon svg {
+        width: 78px;
+        height: 78px;
+    }
+
+    .why-card h3 {
+        font-size: 27px;
+        margin-bottom: 10px;
+    }
+
+    .why-card p {
+        font-size: 17px;
+        line-height: 1.45;
+    }
+
+    .why-card p br {
+        display: none;
+    }
+
+    /* TESTIMONIALS */
+    .testimonials-section {
+        min-height: 0;
+        padding: 40px 0 30px;
+    }
+
+    .testimonials-section h2 {
+        font-size: clamp(30px, 8vw, 40px);
+        margin-bottom: 45px;
+        padding: 0 20px;
+    }
+
+    .testimonial-wrapper {
+        width: 100%;
+        overflow-x: auto;
+        overflow-y: hidden;
+    }
+
+    .testimonial-track {
+        gap: 20px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .testimonial-card {
+        flex: 0 0 88vw;
+        width: 88vw;
+        min-height: 285px;
+        height: auto;
+        padding: 28px 24px;
+        border-radius: 16px;
+    }
+
+    .testimonial-text {
+        width: 58%;
+    }
+
+    .testimonial-text h3 {
+        font-size: 23px;
+    }
+
+    .stars {
+        font-size: 21px;
+        letter-spacing: 1px;
+    }
+
+    .testimonial-text p {
+        font-size: 15px;
+    }
+
+    .quote {
+        font-size: 90px;
+        top: -22px;
+    }
+
+    .customer-image {
+        width: 145px;
+        height: 145px;
+        right: -55px;
+        top: 62px;
+    }
+
+    .customer-image .pink-circle {
+        width: 145px;
+        height: 145px;
+    }
+
+    .customer-image img {
+        width: 120px;
+        height: 140px;
+    }
+
+    /* DOWNLOAD APP */
+    .download-section {
+        width: calc(100% - 40px);
+        height: auto;
+        min-height: 650px;
+        margin: 35px 20px;
+        border-radius: 20px;
+        overflow: hidden;
+    }
+
+    .download-content {
+        width: 100%;
+        padding: 40px 22px 0;
+        text-align: center;
+    }
+
+    .download-content h2 {
+        font-size: clamp(38px, 10vw, 52px);
+        line-height: 1.08;
+    }
+
+    .download-content p {
+        width: 100%;
+        font-size: 17px;
+        line-height: 1.5;
+        margin-bottom: 22px;
+    }
+
+    .download-content .download-btn {
+        width: min(100%, 343px);
+        margin: 0 auto;
+    }
+
+    .download-visual {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: auto;
+        bottom: 0;
+        width: 100%;
+        height: 330px;
+    }
+
+    .circle-clip {
+        width: 100%;
+        height: 220px;
+        bottom: 0;
+    }
+
+    .download-circle {
+        width: 500px;
+        height: 420px;
+        right: 50%;
+        transform: translateX(50%);
+        bottom: -210px;
+    }
+
+    .phone-image {
+        width: min(280px, 72vw);
+        right: 50%;
+        transform: translateX(50%);
+        top: -5px;
+    }
+
+    /* FOOTER */
+    .footer {
+        padding-top: 30px;
+    }
+
+    .footer-top {
+        grid-template-columns: 1fr;
+        gap: 32px;
+        padding: 0 22px 45px;
+    }
+
+    .footer-brand {
+        grid-column: auto;
+    }
+
+    .footer-logo {
+        width: 155px;
+    }
+
+    .footer-brand p {
+        font-size: 16px;
+    }
+
+    .footer-column h3 {
+        font-size: 20px;
+        margin-bottom: 16px;
+    }
+
+    .footer-column a {
+        font-size: 17px;
+        margin-bottom: 11px;
+    }
+
+    .contact-item {
+        font-size: 16px;
+    }
+
+    .footer-bottom {
+        min-height: 70px;
+        padding: 12px 20px;
+        text-align: center;
+    }
+
+    .footer-bottom p {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+}
+
+
+/* ---------- Very small phones ---------- */
+@media (max-width: 400px) {
+
+    .navbar {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .logo img {
+        width: 78px;
+    }
+
+    .navbar .nav-btn {
+        min-width: 105px;
+        padding: 0 10px;
+        font-size: 12px;
+    }
+
+    .menu-toggle {
+        width: 38px;
+        height: 38px;
+    }
+
+    .hero-content {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .hero .circle-container {
+        height: 290px;
+    }
+
+    .hero .pink-circle {
+        width: 430px;
+        height: 430px;
+    }
+
+    .hero-image {
+        width: 350px;
+    }
+
+    .safety-left {
+        height: 420px;
+        min-height: 420px;
+    }
+
+    .safety-circle {
+        width: 520px;
+        height: 520px;
+    }
+
+    .safety-woman {
+        width: 315px;
+    }
+
+    .testimonial-card {
+        flex-basis: 90vw;
+        width: 90vw;
+    }
+
+    .testimonial-text {
+        width: 57%;
+    }
+
+    .customer-image {
+        right: -62px;
+    }
+
+    .download-section {
+        width: calc(100% - 24px);
+        margin-left: 12px;
+        margin-right: 12px;
+    }
+}
+
+
+/* Desktop: hide mobile menu button */
+.menu-toggle {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+    }
+}
