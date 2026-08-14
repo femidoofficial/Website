@@ -6,15 +6,15 @@ const policyHtml = `<div class="policy-container">
 
                 <article>
 
-        <h1>SheGo Privacy Policy</h1>
+        <h1>FemiDo Privacy Policy</h1>
 
-        <p> SheGo - Privacy Policy</p>
+        
 
-        <p>1. Introduction</p>
+        <p class="heading">1. Introduction</p>
 
-        <p>1.1 Purpose of this Privacy Policy</p>
+        <p class="subheading">1.1 Purpose of this Privacy Policy</p>
 
-        <p>At SheGo, we value your privacy and are committed to protecting your personal information. This Privacy
+        <p>At FemiDo, we value your privacy and are committed to protecting your personal information. This Privacy
 
             Policy explains how we collect, use, store, process, share, and safeguard your personal data when you use
 
@@ -26,13 +26,13 @@ const policyHtml = `<div class="policy-container">
 
             privacy.</p>
 
-        <p>By accessing or using SheGo&#x27;s services, you acknowledge that you have read and understood this Privacy
+        <p>By accessing or using FemiDo&#x27;s services, you acknowledge that you have read and understood this Privacy
 
             Policy.</p>
 
-        <p>1.2 Company Details</p>
+        <p class="subheading">1.2 Company Details</p>
 
-        <p>SheGo is operated by [MLOCK INNOVATIONS LLP] (&quot;SheGo&quot;, &quot;Company&quot;, &quot;we&quot;,
+        <p>FemiDo is operated by [MLOCK INNOVATIONS LLP] (&quot;FemiDo&quot;, &quot;Company&quot;, &quot;we&quot;,
 
             &quot;us&quot;, or &quot;our&quot;), a company incorporated under the laws of India, having its registered
 
@@ -42,39 +42,39 @@ const policyHtml = `<div class="policy-container">
 
             contact us at:</p>
 
-        <p>Email: [shegoindore@gmail.com]</p>
+        <p>Email: [femidoofficial@gmail.com]</p>
 
         <p>Registered Office: [139,Uday Nagar Indore]</p>
 
-        <p>Website: [www.shego.bike]</p>
+        <p>Website: [www.FemiDo.in]</p>
 
-        <p>1.3 Scope of this Privacy Policy</p>
+        <p class="subheading">1.3 Scope of this Privacy Policy</p>
 
-        <p>This Privacy Policy applies to all personal information collected by SheGo through:</p>
+        <p>This Privacy Policy applies to all personal information collected by FemiDo through:</p>
 
-        <p>The SheGo mobile application;</p>
+        <p>The FemiDo mobile application;</p>
 
-        <p>The SheGo website;</p>
+        <p>The FemiDo website;</p>
 
         <p>Customer support interactions;</p>
 
         <p>Marketing and promotional communications;</p>
 
-        <p>Social media pages managed by SheGo;</p>
+        <p>Social media pages managed by FemiDo;</p>
 
         <p>Any other online or offline services that refer to or incorporate this Privacy Policy.</p>
 
-        <p>This Policy applies to all users of SheGo&#x27;s services, including customers, registered users, visitors,
+        <p>This Policy applies to all users of FemiDo&#x27;s services, including customers, registered users, visitors,
 
             business partners, service providers, and any other individuals whose personal information is processed by
 
-            SheGo.</p>
+            FemiDo.</p>
 
-        <p>1.4 Services Covered</p>
+        <p class="subheading">1.4 Services Covered</p>
 
         <p>This Privacy Policy governs the collection and processing of personal information in connection with all
 
-            services provided by SheGo, including but not limited to:</p>
+            services provided by FemiDo, including but not limited to:</p>
 
         <p>Ride-hailing and transportation services;</p>
 
@@ -90,17 +90,17 @@ const policyHtml = `<div class="policy-container">
 
         <p>Promotional campaigns, loyalty programmes, and referrals;</p>
 
-        <p>Any additional products, features, or services that SheGo may introduce from time to time.</p>
+        <p>Any additional products, features, or services that FemiDo may introduce from time to time.</p>
 
-        <p>This Privacy Policy should be read together with SheGo&#x27;s Terms of Service and any other policies that
+        <p>This Privacy Policy should be read together with FemiDo&#x27;s Terms of Service and any other policies that
 
             may apply to specific products or services.</p>
 
-        <p>2. Acceptance of this Privacy Policy</p>
+        <p class="heading">2. Acceptance of this Privacy Policy</p>
 
-        <p>2.1 User Consent</p>
+        <p class="subheading">2.1 User Consent</p>
 
-        <p>By accessing, registering for, or using the SheGo website, mobile application, or any of our services, you
+        <p>By accessing, registering for, or using the FemiDo website, mobile application, or any of our services, you
 
             acknowledge that you have read, understood, and agree to the collection, use, processing, storage,
 
@@ -114,9 +114,9 @@ const policyHtml = `<div class="policy-container">
 
         </p>
 
-        <p>2.2 Continued Use Following Updates</p>
+        <p class="subheading">2.2 Continued Use Following Updates</p>
 
-        <p>SheGo may revise or update this Privacy Policy from time to time to reflect changes in our services, legal
+        <p>FemiDo may revise or update this Privacy Policy from time to time to reflect changes in our services, legal
 
             requirements, technological developments, or business practices. When we make material changes, we will
 
@@ -124,7 +124,7 @@ const policyHtml = `<div class="policy-container">
 
             mobile application or by sending notifications where required by applicable law.</p>
 
-        <p>Your continued access to or use of SheGo&#x27;s services after the updated Privacy Policy becomes effective
+        <p>Your continued access to or use of FemiDo&#x27;s services after the updated Privacy Policy becomes effective
 
             constitutes your acknowledgement and acceptance of the revised terms. If you do not agree with any changes,
 
@@ -132,9 +132,9 @@ const policyHtml = `<div class="policy-container">
 
             applicable legal requirements.</p>
 
-        <p>2.3 Agreement to Data Practices</p>
+        <p class="subheading">2.3 Agreement to Data Practices</p>
 
-        <p>By using SheGo&#x27;s services, you agree that we may collect, use, process, store, transfer, and disclose
+        <p>By using FemiDo&#x27;s services, you agree that we may collect, use, process, store, transfer, and disclose
 
             your personal information for the purposes described in this Privacy Policy and in compliance with
 
@@ -148,13 +148,13 @@ const policyHtml = `<div class="policy-container">
 
             continue providing that service to you.</p>
 
-        <p>3. Definitions</p>
+        <p class="heading">3. Definitions</p>
 
         <p>For the purposes of this Privacy Policy, the following terms shall have the meanings assigned to them below:
 
         </p>
 
-        <p>3.1 Personal Data</p>
+        <p class="subheading">3.1 Personal Data</p>
 
         <p>&quot;Personal Data&quot; means any data about an individual who is identifiable by or in relation to such
 
@@ -162,7 +162,7 @@ const policyHtml = `<div class="policy-container">
 
             individual, as defined under applicable laws.</p>
 
-        <p>3.2 Sensitive Personal Data (Where Applicable)</p>
+        <p class="subheading">3.2 Sensitive Personal Data (Where Applicable)</p>
 
         <p>&quot;Sensitive Personal Data&quot; refers to personal information that requires a higher level of protection
 
@@ -172,55 +172,55 @@ const policyHtml = `<div class="policy-container">
 
             credentials, or any other category of data designated as sensitive under applicable legislation.</p>
 
-        <p>Where SheGo collects or processes such information, it will do so only for lawful purposes and in accordance
+        <p>Where FemiDo collects or processes such information, it will do so only for lawful purposes and in accordance
 
             with applicable legal requirements.</p>
 
-        <p>3.3 User</p>
+        <p class="subheading">3.3 User</p>
 
-        <p>&quot;User&quot; means any individual who accesses, browses, registers for, or uses the SheGo Platform or any
+        <p>&quot;User&quot; means any individual who accesses, browses, registers for, or uses the FemiDo Platform or any
 
-            of the Services, including Riders, Drivers, visitors, and other persons interacting with SheGo.</p>
+            of the Services, including Riders, Drivers, visitors, and other persons interacting with FemiDo.</p>
 
-        <p>3.4 Rider</p>
+        <p class="subheading">3.4 Rider</p>
 
         <p>&quot;Rider&quot; means a User who requests, books, schedules, or receives transportation or any other
 
-            services offered through the SheGo Platform.</p>
+            services offered through the FemiDo Platform.</p>
 
-        <p>3.5 Driver/Partner</p>
+        <p class="subheading">3.5 Driver/Partner</p>
 
         <p>&quot;Driver&quot; or &quot;Partner&quot; means an independent driver, transportation provider, or other
 
-            service provider who has partnered with SheGo to provide transportation or related services through the
+            service provider who has partnered with FemiDo to provide transportation or related services through the
 
-            Platform. Drivers and Partners are independent service providers and are not employees of SheGo unless
+            Platform. Drivers and Partners are independent service providers and are not employees of FemiDo unless
 
             expressly stated otherwise.</p>
 
-        <p>3.6 Services</p>
+        <p class="subheading">3.6 Services</p>
 
         <p>&quot;Services&quot; means all products, features, functionalities, technologies, applications, websites,
 
             customer support services, ride-booking services, payment services, safety features, promotional programmes,
 
-            and any other offerings provided by or through SheGo from time to time.</p>
+            and any other offerings provided by or through FemiDo from time to time.</p>
 
-        <p>3.7 Device</p>
+        <p class="subheading">3.7 Device</p>
 
-        <p>&quot;Device&quot; means any electronic device used to access the SheGo Platform or Services, including but
+        <p>&quot;Device&quot; means any electronic device used to access the FemiDo Platform or Services, including but
 
             not limited to smartphones, tablets, laptops, desktop computers, wearable devices, or any other
 
             internet-enabled device.</p>
 
-        <p>3.8 Platform</p>
+        <p class="subheading">3.8 Platform</p>
 
-        <p>&quot;Platform&quot; means the SheGo mobile application, website, software, digital interfaces, and any other
+        <p>&quot;Platform&quot; means the FemiDo mobile application, website, software, digital interfaces, and any other
 
-            technology or systems through which SheGo provides its Services.</p>
+            technology or systems through which FemiDo provides its Services.</p>
 
-        <p>3.9 Processing</p>
+        <p class="subheading">3.9 Processing</p>
 
         <p>&quot;Processing&quot; means any operation or set of operations performed on Personal Data, whether by
 
@@ -230,21 +230,21 @@ const policyHtml = `<div class="policy-container">
 
             deletion, destruction, or any other handling of Personal Data.</p>
 
-        <p>3.10 Third-Party Service Provider</p>
+        <p class="subheading">3.10 Third-Party Service Provider</p>
 
         <p>&quot;Third-Party Service Provider&quot; means any individual, company, organization, contractor, vendor,
 
             payment gateway, cloud service provider, analytics provider, communication service provider, verification
 
-            agency, or other external entity that processes or accesses Personal Data on behalf of SheGo or provides
+            agency, or other external entity that processes or accesses Personal Data on behalf of FemiDo or provides
 
             services necessary for the operation, maintenance, security, or improvement of the Services.</p>
 
-        <p>4. Eligibility</p>
+        <p class="heading">4. Eligibility</p>
 
-        <p>4.1 Age Requirements</p>
+        <p class="subheading">4.1 Age Requirements</p>
 
-        <p>To access or use the SheGo Platform and its Services, you must be legally competent to enter into a binding
+        <p>To access or use the FemiDo Platform and its Services, you must be legally competent to enter into a binding
 
             contract under applicable law. By using the Platform, you represent and warrant that you satisfy the minimum
 
@@ -254,39 +254,39 @@ const policyHtml = `<div class="policy-container">
 
             contract, may use the Services only with the involvement, supervision, and consent of a parent or legal
 
-            guardian, where permitted by applicable law. SheGo reserves the right to refuse, suspend, or terminate
+            guardian, where permitted by applicable law. FemiDo reserves the right to refuse, suspend, or terminate
 
             access to the Services if it determines that a User does not meet the applicable eligibility requirements.
 
         </p>
 
-        <p>4.2 Account Ownership</p>
+        <p class="subheading">4.2 Account Ownership</p>
 
         <p>Where registration is required, you are responsible for creating and maintaining an account using accurate,
 
             complete, and up-to-date information. You agree that your account is personal to you and must not be
 
-            transferred, assigned, sold, or shared with any other individual unless expressly authorized by SheGo.</p>
+            transferred, assigned, sold, or shared with any other individual unless expressly authorized by FemiDo.</p>
 
         <p>You are solely responsible for maintaining the confidentiality of your account credentials and for all
 
-            activities carried out through your account. You must promptly notify SheGo of any unauthorized access,
+            activities carried out through your account. You must promptly notify FemiDo of any unauthorized access,
 
-            suspected security breach, or misuse of your account. SheGo shall not be liable for any loss or damage
+            suspected security breach, or misuse of your account. FemiDo shall not be liable for any loss or damage
 
             arising from your failure to safeguard your account credentials or comply with your account-related
 
             obligations.</p>
 
-        <p>5. Information We Collect</p>
+        <p class="heading">5. Information We Collect</p>
 
-        <p>SheGo collects information that you provide directly to us, information generated through your use of the
+        <p>FemiDo collects information that you provide directly to us, information generated through your use of the
 
             Platform, and information obtained from authorized third parties where permitted by applicable law. The
 
             information collected enables us to provide, maintain, improve, and secure our Services.</p>
 
-        <p>5.1 Information Users Provide</p>
+        <p class="subheading">5.1 Information Users Provide</p>
 
         <p>When you register for an account, book or provide rides, communicate with us, or otherwise use our Services,
 
@@ -300,9 +300,9 @@ const policyHtml = `<div class="policy-container">
 
             agree to promptly update such information whenever necessary.</p>
 
-        <p>5.2 Account Details</p>
+        <p class="subheading">5.2 Account Details</p>
 
-        <p>To create and maintain your SheGo account, we may collect information including:</p>
+        <p>To create and maintain your FemiDo account, we may collect information including:</p>
 
         <p>Full name;</p>
 
@@ -320,9 +320,9 @@ const policyHtml = `<div class="policy-container">
 
         <p>Any other information required for account registration and management.</p>
 
-        <p>5.3 Identity Verification</p>
+        <p class="subheading">5.3 Identity Verification</p>
 
-        <p>Where required for safety, fraud prevention, legal compliance, or regulatory purposes, SheGo may collect and
+        <p>Where required for safety, fraud prevention, legal compliance, or regulatory purposes, FemiDo may collect and
 
             verify identity-related information, including government-issued identification documents, photographs,
 
@@ -332,7 +332,7 @@ const policyHtml = `<div class="policy-container">
 
             accordance with applicable law and our data retention practices.</p>
 
-        <p>5.4 Driver Verification Documents</p>
+        <p class="subheading">5.4 Driver Verification Documents</p>
 
         <p>Drivers and service partners may be required to provide additional documentation to enable onboarding and
 
@@ -356,13 +356,13 @@ const policyHtml = `<div class="policy-container">
 
         <p>Bank account information for payouts; and</p>
 
-        <p>Any additional documents required under applicable law or SheGo&#x27;s verification procedures.</p>
+        <p>Any additional documents required under applicable law or FemiDo&#x27;s verification procedures.</p>
 
-        <p>SheGo may verify these documents directly or through authorized third-party verification service providers.
+        <p>FemiDo may verify these documents directly or through authorized third-party verification service providers.
 
         </p>
 
-        <p>5.5 Payment Information</p>
+        <p class="subheading">5.5 Payment Information</p>
 
         <p>To facilitate payments, refunds, incentives, and other financial transactions, we may collect payment-related
 
@@ -384,11 +384,11 @@ const policyHtml = `<div class="policy-container">
 
         <p>Payment card information may be processed by authorized payment service providers in accordance with
 
-            applicable security standards. SheGo does not store complete payment card details unless required and
+            applicable security standards. FemiDo does not store complete payment card details unless required and
 
             permitted by applicable law.</p>
 
-        <p>5.6 Emergency Contacts</p>
+        <p class="subheading">5.6 Emergency Contacts</p>
 
         <p>Where you choose to use safety features available on the Platform, you may provide the name, relationship,
 
@@ -396,11 +396,11 @@ const policyHtml = `<div class="policy-container">
 
         <p>You are responsible for ensuring that you have obtained the necessary authorization from your emergency
 
-            contacts before providing their personal information to SheGo.</p>
+            contacts before providing their personal information to FemiDo.</p>
 
-        <p>5.7 Customer Support Communication</p>
+        <p class="subheading">5.7 Customer Support Communication</p>
 
-        <p>When you contact SheGo for assistance, submit complaints, provide feedback, or communicate with our customer
+        <p>When you contact FemiDo for assistance, submit complaints, provide feedback, or communicate with our customer
 
             support team, we may collect information including:</p>
 
@@ -422,23 +422,23 @@ const policyHtml = `<div class="policy-container">
 
             safety, comply with legal obligations, and maintain records of customer interactions.</p>
 
-        <p>6. Information Automatically Collected</p>
+        <p class="heading">6. Information Automatically Collected</p>
 
-        <p>In addition to the information you provide directly, SheGo automatically collects certain information when
+        <p>In addition to the information you provide directly, FemiDo automatically collects certain information when
 
             you access or use the Platform. This information helps us operate, secure, maintain, and improve our
 
             Services.</p>
 
-        <p>6.1 GPS Location Information</p>
+        <p class="subheading">6.1 GPS Location Information</p>
 
-        <p>Subject to your device settings and permissions, SheGo collects precise and approximate location information
+        <p>Subject to your device settings and permissions, FemiDo collects precise and approximate location information
 
             to facilitate ride booking, driver matching, route navigation, fare calculation, trip monitoring, safety
 
             features, fraud prevention, and customer support.</p>
 
-        <p>6.2 Device Information</p>
+        <p class="subheading">6.2 Device Information</p>
 
         <p>We may collect information relating to the device used to access the Platform, including:</p>
 
@@ -456,7 +456,7 @@ const policyHtml = `<div class="policy-container">
 
         <p>Device configuration details.</p>
 
-        <p>6.3 IP Address</p>
+        <p class="subheading">6.3 IP Address</p>
 
         <p>We automatically collect your Internet Protocol (IP) address and related network information to help secure
 
@@ -464,7 +464,7 @@ const policyHtml = `<div class="policy-container">
 
             obligations.</p>
 
-        <p>6.4 Browser and Device Identifiers</p>
+        <p class="subheading">6.4 Browser and Device Identifiers</p>
 
         <p>When you access the Platform through a web browser or mobile application, we may collect browser type,
 
@@ -472,7 +472,7 @@ const policyHtml = `<div class="policy-container">
 
             details, and application version information.</p>
 
-        <p>6.5 App Usage Information</p>
+        <p class="subheading">6.5 App Usage Information</p>
 
         <p>We collect information regarding how you interact with the Platform, including:</p>
 
@@ -490,13 +490,13 @@ const policyHtml = `<div class="policy-container">
 
         <p>User preferences.</p>
 
-        <p>6.6 Crash Logs and Diagnostics</p>
+        <p class="subheading">6.6 Crash Logs and Diagnostics</p>
 
-        <p>To improve reliability and performance, SheGo may collect crash reports, diagnostic information, performance
+        <p>To improve reliability and performance, FemiDo may collect crash reports, diagnostic information, performance
 
             metrics, and error logs generated when the Platform experiences technical issues.</p>
 
-        <p>6.7 Cookies and Similar Technologies</p>
+        <p class="subheading">6.7 Cookies and Similar Technologies</p>
 
         <p>Our website and certain features of the Platform may use cookies, web beacons, pixels, software development
 
@@ -508,7 +508,7 @@ const policyHtml = `<div class="policy-container">
 
             affect the functionality of some Services.</p>
 
-        <p>6.8 Analytics Information</p>
+        <p class="subheading">6.8 Analytics Information</p>
 
         <p>We may use analytics tools and technologies to understand how users interact with the Platform, measure
 
@@ -518,7 +518,7 @@ const policyHtml = `<div class="policy-container">
 
         </p>
 
-        <p>6.9 Network Information</p>
+        <p class="subheading">6.9 Network Information</p>
 
         <p>We may collect information relating to your internet connection or mobile network, including network type,
 
@@ -526,35 +526,35 @@ const policyHtml = `<div class="policy-container">
 
             optimize service performance.</p>
 
-        <p>7. Permissions We Request</p>
+        <p class="heading">7. Permissions We Request</p>
 
-        <p>To provide certain features and functionalities, SheGo may request access to specific device permissions. You
+        <p>To provide certain features and functionalities, FemiDo may request access to specific device permissions. You
 
             may grant, deny, or revoke these permissions through your device settings; however, some Services may not
 
             function properly without the required permissions.</p>
 
-        <p>7.1 Location Permission</p>
+        <p class="subheading">7.1 Location Permission</p>
 
         <p>We request access to your device&#x27;s location to enable ride booking, driver matching, navigation, trip
 
             tracking, fare estimation, safety features, and customer support.</p>
 
-        <p>7.2 Camera Permission</p>
+        <p class="subheading">7.2 Camera Permission</p>
 
         <p>Camera access may be requested to allow users to capture profile photographs, upload verification documents,
 
             scan identification documents or QR codes, report incidents, and access other camera-enabled features.</p>
 
-        <p>7.3 Microphone Permission</p>
+        <p class="subheading">7.3 Microphone Permission</p>
 
         <p>Microphone access may be requested for voice-based features, customer support interactions, in-app
 
             communication features, or audio recording where such functionality is available.</p>
 
-        <p>7.4 Contacts Permission (Where Applicable)</p>
+        <p class="subheading">7.4 Contacts Permission (Where Applicable)</p>
 
-        <p>If you choose to use emergency contact features, referral programmes, or other optional functionality, SheGo
+        <p>If you choose to use emergency contact features, referral programmes, or other optional functionality, FemiDo
 
             may request permission to access selected contact information from your device.</p>
 
@@ -562,85 +562,85 @@ const policyHtml = `<div class="policy-container">
 
             requested.</p>
 
-        <p>7.5 Notification Permission</p>
+        <p class="subheading">7.5 Notification Permission</p>
 
-        <p>Notification permission enables SheGo to send ride updates, driver arrival alerts, OTPs, payment
+        <p>Notification permission enables FemiDo to send ride updates, driver arrival alerts, OTPs, payment
 
             confirmations, safety notifications, promotional communications (where permitted), and other important
 
             service-related messages.</p>
 
-        <p>7.6 Phone Permission</p>
+        <p class="subheading">7.6 Phone Permission</p>
 
         <p>Phone permission may be requested to enable secure communication between Riders and Drivers, verify mobile
 
             numbers, facilitate customer support, and improve fraud prevention measures.</p>
 
-        <p>7.7 Storage or Photos Permission</p>
+        <p class="subheading">7.7 Storage or Photos Permission</p>
 
         <p>Storage or photo library access may be requested to enable users to upload profile photographs, verification
 
             documents, receipts, complaint evidence, or other content voluntarily submitted through the Platform.</p>
 
-        <p>8. How We Use Your Information</p>
+        <p class="heading">8. How We Use Your Information</p>
 
-        <p>SheGo processes personal information only for lawful purposes, including providing, maintaining, improving,
+        <p>FemiDo processes personal information only for lawful purposes, including providing, maintaining, improving,
 
             protecting, and administering the Services.</p>
 
         <p>We may use your information to:</p>
 
-        <p>8.1 Create and Manage Accounts</p>
+        <p class="subheading">8.1 Create and Manage Accounts</p>
 
         <p>To register users, verify identities, maintain user profiles, authenticate accounts, and manage
 
             account-related activities.</p>
 
-        <p>8.2 Book and Manage Rides</p>
+        <p class="subheading">8.2 Book and Manage Rides</p>
 
         <p>To process ride requests, schedule trips, calculate fares, monitor ride progress, generate invoices, and
 
             facilitate transportation services.</p>
 
-        <p>8.3 Match Riders and Drivers</p>
+        <p class="subheading">8.3 Match Riders and Drivers</p>
 
         <p>To identify suitable Drivers for ride requests based on location, availability, service preferences, and
 
             operational requirements.</p>
 
-        <p>8.4 Navigation and Route Optimization</p>
+        <p class="subheading">8.4 Navigation and Route Optimization</p>
 
         <p>To provide navigation assistance, estimate arrival times, optimize routes, monitor trip progress, and improve
 
             travel efficiency.</p>
 
-        <p>8.5 Safety and Security Features</p>
+        <p class="subheading">8.5 Safety and Security Features</p>
 
         <p>To enable emergency assistance features, trip monitoring, identity verification, fraud detection, suspicious
 
             activity monitoring, and other safety-related functions.</p>
 
-        <p>8.6 Fraud Prevention</p>
+        <p class="subheading">8.6 Fraud Prevention</p>
 
         <p>To detect, investigate, prevent, and respond to fraudulent transactions, unauthorized access, policy
 
             violations, abuse of the Platform, and other security risks.</p>
 
-        <p>8.7 Customer Support</p>
+        <p class="subheading">8.7 Customer Support</p>
 
         <p>To respond to inquiries, resolve complaints, investigate incidents, provide technical assistance, and improve
 
             customer service quality.</p>
 
-        <p>8.8 Payment Processing</p>
+        <p class="subheading">8.8 Payment Processing</p>
 
         <p>To process payments, issue refunds, manage incentives, verify financial transactions, prevent payment fraud,
 
             and maintain financial records.</p>
 
-        <p>8.9 Marketing and Promotional Communications</p>
+        <p class="subheading">8.9 Marketing and Promotional Communications</p>
 
-        <p>Where permitted by applicable law and your communication preferences, SheGo may use your information to send
+        <p>Where permitted by applicable law and your communication preferences, FemiDo may use your information to send
 
             promotional offers, newsletters, rewards, surveys, and information about new features or services.</p>
 
@@ -648,67 +648,67 @@ const policyHtml = `<div class="policy-container">
 
             service-related notifications.</p>
 
-        <p>8.10 Legal and Regulatory Compliance</p>
+        <p class="subheading">8.10 Legal and Regulatory Compliance</p>
 
         <p>To comply with applicable laws, regulatory requirements, court orders, government requests, law enforcement
 
             obligations, and contractual commitments.</p>
 
-        <p>8.11 Analytics and Research</p>
+        <p class="subheading">8.11 Analytics and Research</p>
 
         <p>To understand user behaviour, evaluate Platform performance, generate statistical reports, conduct research,
 
             and support business decision-making.</p>
 
-        <p>8.12 Service Improvement</p>
+        <p class="subheading">8.12 Service Improvement</p>
 
         <p>To develop new features, improve user experience, enhance Platform functionality, strengthen security,
 
             optimize operational efficiency, and improve overall service quality.</p>
 
-        <p>9. Safety Features</p>
+        <p class="heading">9. Safety Features</p>
 
-        <p>User safety is a core priority at SheGo. We use personal information to provide safety-related features
+        <p>User safety is a core priority at FemiDo. We use personal information to provide safety-related features
 
             designed to help protect Riders and Drivers throughout their use of the Platform.</p>
 
-        <p>9.1 Live Trip Tracking</p>
+        <p class="subheading">9.1 Live Trip Tracking</p>
 
         <p>Eligible rides may include real-time trip tracking to allow monitoring of trip progress and improve user
 
             safety.</p>
 
-        <p>9.2 SOS Feature</p>
+        <p class="subheading">9.2 SOS Feature</p>
 
         <p>Where available, users may access an emergency assistance feature that enables them to quickly contact
 
             emergency services or designated emergency contacts during a trip.</p>
 
-        <p>9.3 Emergency Contacts</p>
+        <p class="subheading">9.3 Emergency Contacts</p>
 
         <p>Users may voluntarily designate emergency contacts who can receive ride-related information during emergency
 
             situations or when safety features are activated.</p>
 
-        <p>9.4 Ride Sharing</p>
+        <p class="subheading">9.4 Ride Sharing</p>
 
         <p>Users may choose to share live trip information, driver details, route information, and estimated arrival
 
             times with trusted contacts.</p>
 
-        <p>9.5 Driver Verification</p>
+        <p class="subheading">9.5 Driver Verification</p>
 
-        <p>SheGo verifies Drivers through identity verification, document verification, licence validation, vehicle
+        <p>FemiDo verifies Drivers through identity verification, document verification, licence validation, vehicle
 
             verification, and other checks considered appropriate for maintaining Platform safety.</p>
 
-        <p>9.6 Identity Verification</p>
+        <p class="subheading">9.6 Identity Verification</p>
 
-        <p>SheGo may verify the identity of Riders and Drivers where necessary to reduce fraud, prevent misuse of the
+        <p>FemiDo may verify the identity of Riders and Drivers where necessary to reduce fraud, prevent misuse of the
 
             Platform, comply with legal obligations, and enhance user safety.</p>
 
-        <p>9.7 Incident Investigations</p>
+        <p class="subheading">9.7 Incident Investigations</p>
 
         <p>Personal information, ride information, communications, location information, and other relevant records may
 
@@ -716,19 +716,19 @@ const policyHtml = `<div class="policy-container">
 
             unlawful activities.</p>
 
-        <p>10. Location Information</p>
+        <p class="heading">10. Location Information</p>
 
-        <p>10.1 Foreground Location</p>
+        <p class="subheading">10.1 Foreground Location</p>
 
-        <p>When the Platform is actively in use, SheGo may collect precise or approximate location information to
+        <p>When the Platform is actively in use, FemiDo may collect precise or approximate location information to
 
             facilitate ride booking, driver matching, navigation, fare calculation, trip tracking, and customer support.
 
         </p>
 
-        <p>10.2 Background Location (Where Applicable)</p>
+        <p class="subheading">10.2 Background Location (Where Applicable)</p>
 
-        <p>Where enabled by the user and permitted by applicable law, SheGo may collect location information while the
+        <p>Where enabled by the user and permitted by applicable law, FemiDo may collect location information while the
 
             application is running in the background to support ongoing trips, safety features, fraud prevention, and
 
@@ -738,7 +738,7 @@ const policyHtml = `<div class="policy-container">
 
             obtaining any permissions required under applicable law.</p>
 
-        <p>10.3 Purpose of Location Collection</p>
+        <p class="subheading">10.3 Purpose of Location Collection</p>
 
         <p>Location information is used to:</p>
 
@@ -758,7 +758,7 @@ const policyHtml = `<div class="policy-container">
 
         <p>Improve service quality and operational efficiency.</p>
 
-        <p>10.4 When Location Collection Starts and Stops</p>
+        <p class="subheading">10.4 When Location Collection Starts and Stops</p>
 
         <p>Location collection generally begins when a user requests or accepts a ride, opens location-dependent
 
@@ -772,17 +772,17 @@ const policyHtml = `<div class="policy-container">
 
             purposes.</p>
 
-        <p>11. How We Share Information</p>
+        <p class="heading">11. How We Share Information</p>
 
-        <p>SheGo respects the confidentiality of your personal information and shares it only where necessary to provide
+        <p>FemiDo respects the confidentiality of your personal information and shares it only where necessary to provide
 
             the Services, comply with legal obligations, protect the rights and safety of users, or support our
 
             legitimate business operations.</p>
 
-        <p>11.1 Sharing with Drivers</p>
+        <p class="subheading">11.1 Sharing with Drivers</p>
 
-        <p>When you request a ride, SheGo shares limited information with the assigned Driver that is necessary to
+        <p>When you request a ride, FemiDo shares limited information with the assigned Driver that is necessary to
 
             complete the trip, including your name, pickup and destination locations, contact information (using
 
@@ -790,15 +790,15 @@ const policyHtml = `<div class="policy-container">
 
             for navigation and safety.</p>
 
-        <p>11.2 Sharing with Riders</p>
+        <p class="subheading">11.2 Sharing with Riders</p>
 
-        <p>When a Driver accepts a ride request, SheGo shares limited information with the Rider, including the
+        <p>When a Driver accepts a ride request, FemiDo shares limited information with the Rider, including the
 
             Driver&#x27;s name, profile photograph, vehicle details, driver rating (where applicable), estimated arrival
 
             time, and other information necessary to facilitate the ride and ensure user safety.</p>
 
-        <p>11.3 Payment Service Providers</p>
+        <p class="subheading">11.3 Payment Service Providers</p>
 
         <p>We may share payment-related information with authorized payment gateways, banks, financial institutions, and
 
@@ -808,15 +808,15 @@ const policyHtml = `<div class="policy-container">
 
             applicable legal requirements.</p>
 
-        <p>11.4 Cloud Hosting Providers</p>
+        <p class="subheading">11.4 Cloud Hosting Providers</p>
 
-        <p>SheGo may use reputable cloud hosting and infrastructure providers to securely store, process, back up, and
+        <p>FemiDo may use reputable cloud hosting and infrastructure providers to securely store, process, back up, and
 
             manage personal information and Platform data. Such providers are contractually required to implement
 
             appropriate security measures and process information only on our instructions.</p>
 
-        <p>11.5 Analytics Providers</p>
+        <p class="subheading">11.5 Analytics Providers</p>
 
         <p>We may share limited information with analytics providers to understand Platform usage, evaluate performance,
 
@@ -824,7 +824,7 @@ const policyHtml = `<div class="policy-container">
 
             analytics information is aggregated, anonymized, or de-identified.</p>
 
-        <p>11.6 Customer Support Vendors</p>
+        <p class="subheading">11.6 Customer Support Vendors</p>
 
         <p>To provide efficient customer support, we may share relevant information with authorized customer support
 
@@ -832,15 +832,15 @@ const policyHtml = `<div class="policy-container">
 
             inquiries, complaints, and safety incidents.</p>
 
-        <p>11.7 Government Authorities</p>
+        <p class="subheading">11.7 Government Authorities</p>
 
-        <p>SheGo may disclose personal information to government authorities, regulatory bodies, law enforcement
+        <p>FemiDo may disclose personal information to government authorities, regulatory bodies, law enforcement
 
             agencies, courts, tribunals, or other competent authorities where disclosure is required or permitted by
 
             applicable law, legal process, or governmental request.</p>
 
-        <p>11.8 Compliance with Legal Obligations</p>
+        <p class="subheading">11.8 Compliance with Legal Obligations</p>
 
         <p>We may disclose personal information where necessary to:</p>
 
@@ -850,21 +850,21 @@ const policyHtml = `<div class="policy-container">
 
         <p>Enforce our Terms of Service or other agreements;</p>
 
-        <p>Protect the rights, safety, property, or security of SheGo, our users, or the public;</p>
+        <p>Protect the rights, safety, property, or security of FemiDo, our users, or the public;</p>
 
         <p>Investigate fraud, misuse of the Platform, or unlawful activities; or</p>
 
         <p>Defend legal claims.</p>
 
-        <p>11.9 Business Transfers</p>
+        <p class="subheading">11.9 Business Transfers</p>
 
-        <p>If SheGo is involved in a merger, acquisition, investment, restructuring, sale of assets, financing
+        <p>If FemiDo is involved in a merger, acquisition, investment, restructuring, sale of assets, financing
 
             transaction, or similar corporate transaction, personal information may be transferred as part of that
 
             transaction, subject to appropriate confidentiality obligations and applicable legal requirements.</p>
 
-        <p>11.10 Corporate Affiliates</p>
+        <p class="subheading">11.10 Corporate Affiliates</p>
 
         <p>We may share personal information with our parent company, subsidiaries, affiliates, or group companies for
 
@@ -872,75 +872,75 @@ const policyHtml = `<div class="policy-container">
 
             improvement, provided such sharing is consistent with this Privacy Policy and applicable law.</p>
 
-        <p>12. Third-Party Services</p>
+        <p class="heading">12. Third-Party Services</p>
 
-        <p>SheGo may engage trusted third-party service providers to support the operation, maintenance, security, and
+        <p>FemiDo may engage trusted third-party service providers to support the operation, maintenance, security, and
 
             enhancement of the Platform. These providers process personal information only to the extent necessary to
 
-            perform the services requested by SheGo.</p>
+            perform the services requested by FemiDo.</p>
 
-        <p>12.1 Payment Gateways</p>
+        <p class="subheading">12.1 Payment Gateways</p>
 
         <p>Authorized payment gateways and financial service providers facilitate payment processing, refunds,
 
             transaction verification, and fraud prevention.</p>
 
-        <p>12.2 Mapping and Navigation Services</p>
+        <p class="subheading">12.2 Mapping and Navigation Services</p>
 
         <p>Third-party mapping and navigation providers may process location information to provide route guidance,
 
             estimated arrival times, distance calculations, and navigation assistance.</p>
 
-        <p>12.3 SMS and Communication Providers</p>
+        <p class="subheading">12.3 SMS and Communication Providers</p>
 
         <p>Communication service providers may be used to deliver one-time passwords (OTPs), ride notifications,
 
             security alerts, customer support messages, and other service-related communications.</p>
 
-        <p>12.4 Cloud Service Providers</p>
+        <p class="subheading">12.4 Cloud Service Providers</p>
 
         <p>Cloud infrastructure providers may host applications, databases, backups, logs, and other information
 
             necessary for operating the Platform securely and reliably.</p>
 
-        <p>12.5 Authentication Services</p>
+        <p class="subheading">12.5 Authentication Services</p>
 
         <p>Authentication providers may assist with user verification, login security, multi-factor authentication,
 
             account recovery, and identity validation.</p>
 
-        <p>12.6 Analytics Tools</p>
+        <p class="subheading">12.6 Analytics Tools</p>
 
-        <p>SheGo may use analytics tools to understand user interactions, monitor Platform performance, identify
+        <p>FemiDo may use analytics tools to understand user interactions, monitor Platform performance, identify
 
             technical issues, and improve functionality. Analytics providers may receive limited technical or usage
 
             information necessary to perform these services.</p>
 
-        <p>12.7 Links to External Websites</p>
+        <p class="subheading">12.7 Links to External Websites</p>
 
         <p>The Platform may contain links to third-party websites, applications, or services that are not owned or
 
-            controlled by SheGo. We are not responsible for the privacy practices, content, or security of such
+            controlled by FemiDo. We are not responsible for the privacy practices, content, or security of such
 
             third-party services. Users are encouraged to review the privacy policies of any external websites or
 
             services before providing personal information.</p>
 
-        <p>13. International Data Transfers</p>
+        <p class="heading">13. International Data Transfers</p>
 
-        <p>13.1 Cross-Border Processing</p>
+        <p class="subheading">13.1 Cross-Border Processing</p>
 
-        <p>SheGo primarily stores and processes personal information within India. However, certain service providers,
+        <p>FemiDo primarily stores and processes personal information within India. However, certain service providers,
 
             cloud infrastructure providers, technology partners, or support vendors may process information outside
 
             India where necessary to provide the Services or support our business operations.</p>
 
-        <p>13.2 Safeguards for International Transfers</p>
+        <p class="subheading">13.2 Safeguards for International Transfers</p>
 
-        <p>Where personal information is transferred outside India, SheGo will implement appropriate safeguards in
+        <p>Where personal information is transferred outside India, FemiDo will implement appropriate safeguards in
 
             accordance with applicable laws. Such safeguards may include contractual protections, technical and
 
@@ -950,23 +950,23 @@ const policyHtml = `<div class="policy-container">
 
             protection for personal information.</p>
 
-        <p>14. Data Retention</p>
+        <p class="heading">14. Data Retention</p>
 
-        <p>SheGo retains personal information only for as long as necessary to fulfil the purposes described in this
+        <p>FemiDo retains personal information only for as long as necessary to fulfil the purposes described in this
 
             Privacy Policy, comply with legal obligations, resolve disputes, enforce agreements, and protect the rights
 
             and safety of users.</p>
 
-        <p>14.1 Account Information</p>
+        <p class="subheading">14.1 Account Information</p>
 
-        <p>Account information is generally retained for the duration of your relationship with SheGo and for a
+        <p>Account information is generally retained for the duration of your relationship with FemiDo and for a
 
             reasonable period thereafter where necessary for legal, regulatory, fraud prevention, security, or business
 
             continuity purposes.</p>
 
-        <p>14.2 Ride History</p>
+        <p class="subheading">14.2 Ride History</p>
 
         <p>Ride records, trip details, and related operational information may be retained to support customer service,
 
@@ -974,45 +974,45 @@ const policyHtml = `<div class="policy-container">
 
             improvement.</p>
 
-        <p>14.3 Financial Records</p>
+        <p class="subheading">14.3 Financial Records</p>
 
         <p>Payment records, invoices, tax-related information, and other financial documentation may be retained for the
 
             period required under applicable tax, accounting, financial reporting, and regulatory laws.</p>
 
-        <p>14.4 Legal Retention Requirements</p>
+        <p class="subheading">14.4 Legal Retention Requirements</p>
 
-        <p>Where applicable law requires longer retention periods, SheGo will retain personal information for the
+        <p>Where applicable law requires longer retention periods, FemiDo will retain personal information for the
 
             duration required to comply with statutory, regulatory, judicial, or governmental obligations.</p>
 
-        <p>14.5 Deletion of Information</p>
+        <p class="subheading">14.5 Deletion of Information</p>
 
         <p>When personal information is no longer required for the purposes for which it was collected and there is no
 
-            legal basis requiring continued retention, SheGo will securely delete, anonymize, or otherwise dispose of
+            legal basis requiring continued retention, FemiDo will securely delete, anonymize, or otherwise dispose of
 
             such information in accordance with applicable law and our internal data retention policies.</p>
 
-        <p>15. Your Rights</p>
+        <p class="heading">15. Your Rights</p>
 
         <p>Subject to applicable law, including the Digital Personal Data Protection Act, 2023, you may have certain
 
             rights regarding your personal information.</p>
 
-        <p>15.1 Right of Access</p>
+        <p class="subheading">15.1 Right of Access</p>
 
-        <p>You may request confirmation regarding whether SheGo processes your personal information and, where
+        <p>You may request confirmation regarding whether FemiDo processes your personal information and, where
 
             applicable, request access to such information, subject to legal limitations.</p>
 
-        <p>15.2 Right to Correction</p>
+        <p class="subheading">15.2 Right to Correction</p>
 
         <p>You may request the correction, updating, or completion of inaccurate or incomplete personal information
 
-            maintained by SheGo.</p>
+            maintained by FemiDo.</p>
 
-        <p>15.3 Right to Deletion</p>
+        <p class="subheading">15.3 Right to Deletion</p>
 
         <p>You may request the deletion of your personal information where such deletion is permitted under applicable
 
@@ -1020,7 +1020,7 @@ const policyHtml = `<div class="policy-container">
 
             obligations.</p>
 
-        <p>15.4 Right to Withdraw Consent</p>
+        <p class="subheading">15.4 Right to Withdraw Consent</p>
 
         <p>Where processing is based on your consent, you may withdraw that consent at any time. Withdrawal of consent
 
@@ -1028,29 +1028,29 @@ const policyHtml = `<div class="policy-container">
 
             availability of certain Services.</p>
 
-        <p>15.5 Right to Obtain Your Data</p>
+        <p class="subheading">15.5 Right to Obtain Your Data</p>
 
-        <p>Where technically feasible and permitted by applicable law, SheGo may provide you with access to certain
+        <p>Where technically feasible and permitted by applicable law, FemiDo may provide you with access to certain
 
             personal information associated with your account or enable you to download available account data through
 
             the Platform or upon request.</p>
 
-        <p>15.6 Complaints and Grievances</p>
+        <p class="subheading">15.6 Complaints and Grievances</p>
 
         <p>If you believe that your personal information has been processed in violation of applicable law or this
 
-            Privacy Policy, you may submit a complaint to SheGo through the contact details provided in this Privacy
+            Privacy Policy, you may submit a complaint to FemiDo through the contact details provided in this Privacy
 
             Policy. We will review your complaint and respond within the timeframes required by applicable law.</p>
 
-        <p>16. Cookies &amp; Tracking Technologies</p>
+        <p class="heading">16. Cookies &amp; Tracking Technologies</p>
 
-        <p>SheGo uses cookies and similar tracking technologies to improve user experience, enhance security, analyze
+        <p>FemiDo uses cookies and similar tracking technologies to improve user experience, enhance security, analyze
 
             Platform performance, and support the operation of our Services.</p>
 
-        <p>16.1 Types of Cookies</p>
+        <p class="subheading">16.1 Types of Cookies</p>
 
         <p>Depending on how you access the Platform, we may use the following categories of cookies and similar
 
@@ -1072,7 +1072,7 @@ const policyHtml = `<div class="policy-container">
 
             technologies that perform functions comparable to cookies.</p>
 
-        <p>16.2 Purpose of Cookies</p>
+        <p class="subheading">16.2 Purpose of Cookies</p>
 
         <p>Cookies and similar technologies may be used to:</p>
 
@@ -1092,7 +1092,7 @@ const policyHtml = `<div class="policy-container">
 
         <p>Support marketing activities where permitted by applicable law.</p>
 
-        <p>16.3 Managing Cookies</p>
+        <p class="subheading">16.3 Managing Cookies</p>
 
         <p>Most web browsers allow users to manage or disable cookies through browser settings. Users may also manage
 
@@ -1102,11 +1102,11 @@ const policyHtml = `<div class="policy-container">
 
             functionality of some features of the Platform.</p>
 
-        <p>17. Marketing Communications</p>
+        <p class="heading">17. Marketing Communications</p>
 
-        <p>17.1 Promotional Communications</p>
+        <p class="subheading">17.1 Promotional Communications</p>
 
-        <p>Where permitted by applicable law, SheGo may send users promotional messages relating to new features,
+        <p>Where permitted by applicable law, FemiDo may send users promotional messages relating to new features,
 
             offers, discounts, referral programmes, surveys, newsletters, and other marketing communications through
 
@@ -1116,7 +1116,7 @@ const policyHtml = `<div class="policy-container">
 
             requirements.</p>
 
-        <p>17.2 Opt-Out Options</p>
+        <p class="subheading">17.2 Opt-Out Options</p>
 
         <p>You may opt out of receiving promotional communications at any time by:</p>
 
@@ -1126,59 +1126,59 @@ const policyHtml = `<div class="policy-container">
 
         <p>Disabling marketing notifications through your device settings; or</p>
 
-        <p>Contacting SheGo through the contact details provided in this Privacy Policy.</p>
+        <p>Contacting FemiDo through the contact details provided in this Privacy Policy.</p>
 
-        <p>Even if you opt out of promotional communications, SheGo may continue to send important service-related
+        <p>Even if you opt out of promotional communications, FemiDo may continue to send important service-related
 
             communications, including ride confirmations, security alerts, payment notifications, and legally required
 
             notices.</p>
 
-        <p>18. Security Measures</p>
+        <p class="heading">18. Security Measures</p>
 
-        <p>SheGo implements reasonable technical, administrative, and organizational measures designed to protect
+        <p>FemiDo implements reasonable technical, administrative, and organizational measures designed to protect
 
             personal information against unauthorized access, disclosure, alteration, loss, misuse, or destruction.</p>
 
-        <p>18.1 Encryption</p>
+        <p class="subheading">18.1 Encryption</p>
 
         <p>Sensitive information transmitted through the Platform is protected using appropriate encryption technologies
 
             during transmission and, where appropriate, while stored.</p>
 
-        <p>18.2 Secure Storage</p>
+        <p class="subheading">18.2 Secure Storage</p>
 
         <p>Personal information is stored using secure infrastructure with safeguards designed to protect against
 
             unauthorized access, accidental loss, or unlawful processing.</p>
 
-        <p>18.3 Access Controls</p>
+        <p class="subheading">18.3 Access Controls</p>
 
         <p>Access to personal information is restricted to authorized employees, contractors, and service providers who
 
             require such access to perform their duties and who are subject to confidentiality obligations.</p>
 
-        <p>18.4 Security Monitoring</p>
+        <p class="subheading">18.4 Security Monitoring</p>
 
-        <p>SheGo continuously monitors its systems for security threats, suspicious activities, unauthorized access
+        <p>FemiDo continuously monitors its systems for security threats, suspicious activities, unauthorized access
 
             attempts, and potential vulnerabilities. We may conduct security assessments, audits, and system monitoring
 
             to strengthen Platform security.</p>
 
-        <p>18.5 Security Limitations</p>
+        <p class="subheading">18.5 Security Limitations</p>
 
-        <p>Although SheGo uses reasonable security measures, no method of electronic transmission, internet
+        <p>Although FemiDo uses reasonable security measures, no method of electronic transmission, internet
 
             communication, or electronic storage can be guaranteed to be completely secure. Users acknowledge that the
 
-            transmission of information over the internet is undertaken at their own risk, and SheGo cannot guarantee
+            transmission of information over the internet is undertaken at their own risk, and FemiDo cannot guarantee
 
             absolute security.</p>
 
-        <p>19. Children&#x27;s Privacy</p>
+        <p class="heading">19. Children&#x27;s Privacy</p>
 
-        <p>19.1 Minimum Age</p>
+        <p class="subheading">19.1 Minimum Age</p>
 
         <p>The Platform is intended for individuals who are legally eligible to use the Services under applicable law.
 
@@ -1186,53 +1186,53 @@ const policyHtml = `<div class="policy-container">
 
             of a parent or legal guardian, where permitted by law.</p>
 
-        <p>19.2 No Intentional Collection</p>
+        <p class="subheading">19.2 No Intentional Collection</p>
 
-        <p>SheGo does not knowingly collect personal information from children in violation of applicable laws. If we
+        <p>FemiDo does not knowingly collect personal information from children in violation of applicable laws. If we
 
             become aware that personal information has been collected from a child without the required authorization,
 
             we will take reasonable steps to delete such information, subject to legal obligations.</p>
 
-        <p>19.3 Parent or Guardian Requests</p>
+        <p class="subheading">19.3 Parent or Guardian Requests</p>
 
-        <p>Parents or legal guardians who believe that a child has provided personal information to SheGo may contact us
+        <p>Parents or legal guardians who believe that a child has provided personal information to FemiDo may contact us
 
             using the details provided in this Privacy Policy. Upon verification, we will take appropriate action in
 
             accordance with applicable law.</p>
 
-        <p>20. User Responsibilities</p>
+        <p class="heading">20. User Responsibilities</p>
 
         <p>Users play an important role in maintaining the security and integrity of their personal information and
 
             Platform accounts.</p>
 
-        <p>20.1 Accurate Information</p>
+        <p class="subheading">20.1 Accurate Information</p>
 
         <p>You agree to provide accurate, complete, and current information when registering for or using the Platform
 
             and to promptly update such information whenever necessary.</p>
 
-        <p>20.2 Account Security</p>
+        <p class="subheading">20.2 Account Security</p>
 
         <p>You are responsible for maintaining the security of your account, devices, and login credentials, and for all
 
             activities conducted through your account unless otherwise required by applicable law.</p>
 
-        <p>20.3 Password Confidentiality</p>
+        <p class="subheading">20.3 Password Confidentiality</p>
 
         <p>You must keep your password, verification codes, and authentication credentials confidential and must not
 
             share them with any other person. If you suspect unauthorized access to your account, you should immediately
 
-            change your credentials and notify SheGo.</p>
+            change your credentials and notify FemiDo.</p>
 
-        <p>21. Changes to this Privacy Policy</p>
+        <p class="heading">21. Changes to this Privacy Policy</p>
 
-        <p>21.1 Notification of Changes</p>
+        <p class="subheading">21.1 Notification of Changes</p>
 
-        <p>SheGo may update this Privacy Policy from time to time to reflect changes in legal requirements, business
+        <p>FemiDo may update this Privacy Policy from time to time to reflect changes in legal requirements, business
 
             practices, technologies, or the Services we provide.</p>
 
@@ -1240,7 +1240,7 @@ const policyHtml = `<div class="policy-container">
 
             including the Platform, email, push notifications, or other communication channels.</p>
 
-        <p>21.2 Effective Date</p>
+        <p class="subheading">21.2 Effective Date</p>
 
         <p>The revised Privacy Policy becomes effective on the date specified at the beginning of the updated version
 
@@ -1248,17 +1248,17 @@ const policyHtml = `<div class="policy-container">
 
             acknowledgement of the updated Privacy Policy.</p>
 
-        <p>22. Grievance Officer / Data Protection Contact</p>
+        <p class="heading">22. Grievance Officer / Data Protection Contact</p>
 
         <p>In accordance with applicable laws, including the Digital Personal Data Protection Act, 2023 and other
 
-            applicable legal requirements, SheGo has designated a Grievance Officer to address privacy-related concerns
+            applicable legal requirements, FemiDo has designated a Grievance Officer to address privacy-related concerns
 
             and user complaints.</p>
 
         <p>Grievance Officer: [Name]</p>
 
-        <p>Email: [privacy@shego.in]</p>
+        <p>Email: [privacy@FemiDo.in]</p>
 
         <p>Registered Office Address: []</p>
 
@@ -1276,19 +1276,19 @@ const policyHtml = `<div class="policy-container">
 
         <p>Any other matters relating to this Privacy Policy.</p>
 
-        <p>SheGo will acknowledge and respond to complaints within the timelines prescribed under applicable law.</p>
+        <p>FemiDo will acknowledge and respond to complaints within the timelines prescribed under applicable law.</p>
 
-        <p>23. Contact Us</p>
+        <p class="heading">23. Contact Us</p>
 
         <p>If you have any questions, concerns, requests, or feedback regarding this Privacy Policy or our privacy
 
             practices, you may contact us through the following channels:</p>
 
-        <p>Support Email: [shegoindore@gmail.com]</p>
+        <p>Support Email: [FemiDoindore@gmail.com]</p>
 
-        <p>Privacy Email: [shegoindore@gmail.com]</p>
+        <p>Privacy Email: [FemiDoindore@gmail.com]</p>
 
-        <p>Website: [www.shego.bike]</p>
+        <p>Website: [www.FemiDo.bike]</p>
 
         <p>Registered Office:</p>
 
@@ -1296,9 +1296,9 @@ const policyHtml = `<div class="policy-container">
 
         <p>139, Uday Nagar, Indore Kanadia Road, Indore, Indore, Madhya Pradesh, India, 452016</p>
 
-        <p>24. Applicable Law and Jurisdiction</p>
+        <p class="heading">24. Applicable Law and Jurisdiction</p>
 
-        <p>24.1 Governing Law</p>
+        <p class="subheading">24.1 Governing Law</p>
 
         <p>This Privacy Policy shall be governed by and construed in accordance with the laws of India, including the
 
@@ -1306,7 +1306,7 @@ const policyHtml = `<div class="policy-container">
 
             and regulations, as amended from time to time.</p>
 
-        <p>24.2 Jurisdiction</p>
+        <p class="subheading">24.2 Jurisdiction</p>
 
         <p>Subject to applicable law, any dispute arising out of or relating to this Privacy Policy, the processing of
 
@@ -1314,9 +1314,9 @@ const policyHtml = `<div class="policy-container">
 
             competent courts located in [City, State, India], unless otherwise required by applicable law.</p>
 
-        <p>25. Women Safety &amp; Emergency Assistance</p>
+        <p class="heading">25. Women Safety &amp; Emergency Assistance</p>
 
-        <p>The safety and well-being of our users are fundamental to SheGo&#x27;s operations. We have implemented a
+        <p>The safety and well-being of our users are fundamental to FemiDo&#x27;s operations. We have implemented a
 
             range of safety measures designed to enhance rider and driver security throughout every trip.</p>
 
@@ -1336,15 +1336,15 @@ const policyHtml = `<div class="policy-container">
 
         <p>Incident reporting and investigation mechanisms.</p>
 
-        <p>Where emergency features are activated, SheGo may process and share limited information, including ride
+        <p>Where emergency features are activated, FemiDo may process and share limited information, including ride
 
             details, location information, and emergency contact information, solely for the purpose of responding to
 
             the safety event.</p>
 
-        <p>26. Driver Verification &amp; Background Checks</p>
+        <p class="heading">26. Driver Verification &amp; Background Checks</p>
 
-        <p>To promote a safe transportation environment, SheGo may conduct verification procedures before permitting
+        <p>To promote a safe transportation environment, FemiDo may conduct verification procedures before permitting
 
             Drivers to provide services through the Platform.</p>
 
@@ -1370,9 +1370,9 @@ const policyHtml = `<div class="policy-container">
 
             reasonable care while using the Services.</p>
 
-        <p>27. Identity Verification</p>
+        <p class="heading">27. Identity Verification</p>
 
-        <p>SheGo may require Riders and Drivers to complete identity verification before accessing certain features or
+        <p>FemiDo may require Riders and Drivers to complete identity verification before accessing certain features or
 
             Services.</p>
 
@@ -1394,9 +1394,9 @@ const policyHtml = `<div class="policy-container">
 
             Privacy Policy.</p>
 
-        <p>28. Trip Recording Policy (Where Available)</p>
+        <p class="heading">28. Trip Recording Policy (Where Available)</p>
 
-        <p>If SheGo introduces audio recording, video recording, dash camera integration, or similar safety
+        <p>If FemiDo introduces audio recording, video recording, dash camera integration, or similar safety
 
             technologies, users will be informed through the Platform before such features are activated.</p>
 
@@ -1418,9 +1418,9 @@ const policyHtml = `<div class="policy-container">
 
             fulfil these purposes or comply with legal obligations.</p>
 
-        <p>29. Fraud Prevention &amp; Account Security</p>
+        <p class="heading">29. Fraud Prevention &amp; Account Security</p>
 
-        <p>SheGo maintains systems designed to detect, investigate, and prevent fraudulent or unauthorized activities.
+        <p>FemiDo maintains systems designed to detect, investigate, and prevent fraudulent or unauthorized activities.
 
         </p>
 
@@ -1444,13 +1444,13 @@ const policyHtml = `<div class="policy-container">
 
         <p>Automated risk assessments.</p>
 
-        <p>Where fraud or misuse is suspected, SheGo may temporarily restrict access, suspend accounts, request
+        <p>Where fraud or misuse is suspected, FemiDo may temporarily restrict access, suspend accounts, request
 
             additional verification, or take other actions permitted under applicable law and our Terms of Service.</p>
 
-        <p>30. Artificial Intelligence &amp; Automated Decision Making</p>
+        <p class="heading">30. Artificial Intelligence &amp; Automated Decision Making</p>
 
-        <p>SheGo may use automated technologies, artificial intelligence (AI), machine learning, or algorithmic systems
+        <p>FemiDo may use automated technologies, artificial intelligence (AI), machine learning, or algorithmic systems
 
             to improve the operation of the Platform.</p>
 
@@ -1474,19 +1474,19 @@ const policyHtml = `<div class="policy-container">
 
         <p>Automated systems are designed to support operational decisions and improve user experience. Where required
 
-            by applicable law, SheGo will implement appropriate safeguards relating to automated processing involving
+            by applicable law, FemiDo will implement appropriate safeguards relating to automated processing involving
 
             personal information.</p>
 
-        <p>31. Data Breach Notification</p>
+        <p class="heading">31. Data Breach Notification</p>
 
-        <p>SheGo maintains incident response procedures designed to identify, investigate, contain, and remediate actual
+        <p>FemiDo maintains incident response procedures designed to identify, investigate, contain, and remediate actual
 
             or suspected data security incidents.</p>
 
         <p>Where a personal data breach is likely to result in harm to individuals or where notification is required
 
-            under applicable law, SheGo will notify affected individuals and the relevant authorities within the
+            under applicable law, FemiDo will notify affected individuals and the relevant authorities within the
 
             timelines prescribed by law.</p>
 
@@ -1502,9 +1502,9 @@ const policyHtml = `<div class="policy-container">
 
         <p>Contact information for obtaining further assistance.</p>
 
-        <p>32. Compliance with the Digital Personal Data Protection Act, 2023</p>
+        <p class="heading">32. Compliance with the Digital Personal Data Protection Act, 2023</p>
 
-        <p>SheGo is committed to processing personal information in accordance with the Digital Personal Data Protection
+        <p>FemiDo is committed to processing personal information in accordance with the Digital Personal Data Protection
 
             Act, 2023 (&quot;DPDP Act&quot;), and other applicable Indian laws.</p>
 
@@ -1522,13 +1522,13 @@ const policyHtml = `<div class="policy-container">
 
         <p>Processed in a manner that respects the rights of Data Principals under applicable law.</p>
 
-        <p>Where required, SheGo will implement policies, procedures, and technical safeguards to ensure ongoing
+        <p>Where required, FemiDo will implement policies, procedures, and technical safeguards to ensure ongoing
 
             compliance with applicable data protection legislation.</p>
 
-        <p>33. Consent Management</p>
+        <p class="heading">33. Consent Management</p>
 
-        <p>Where processing is based on your consent, SheGo provides mechanisms to enable you to grant, manage, review,
+        <p>Where processing is based on your consent, FemiDo provides mechanisms to enable you to grant, manage, review,
 
             or withdraw consent, subject to applicable legal requirements.</p>
 
@@ -1536,13 +1536,13 @@ const policyHtml = `<div class="policy-container">
 
             availability of certain Platform features that rely on the relevant information.</p>
 
-        <p>Where required by law, SheGo will maintain records relating to consent obtained from users.</p>
+        <p>Where required by law, FemiDo will maintain records relating to consent obtained from users.</p>
 
-        <p>34. Account Deletion Process</p>
+        <p class="heading">34. Account Deletion Process</p>
 
-        <p>Users may request deletion of their SheGo account through the Platform or by contacting customer support.</p>
+        <p>Users may request deletion of their FemiDo account through the Platform or by contacting customer support.</p>
 
-        <p>Upon receiving a valid deletion request, SheGo will:</p>
+        <p>Upon receiving a valid deletion request, FemiDo will:</p>
 
         <p>Verify the identity of the requesting user;</p>
 
@@ -1558,21 +1558,21 @@ const policyHtml = `<div class="policy-container">
 
             retention is permitted or required by applicable law.</p>
 
-        <p>35. Government &amp; Law Enforcement Requests</p>
+        <p class="heading">35. Government &amp; Law Enforcement Requests</p>
 
-        <p>SheGo may disclose personal information to government authorities, law enforcement agencies, courts,
+        <p>FemiDo may disclose personal information to government authorities, law enforcement agencies, courts,
 
             tribunals, regulators, or other competent authorities where required by applicable law or pursuant to a
 
             valid legal request.</p>
 
-        <p>Before disclosing personal information, SheGo will, where appropriate and legally permissible, review such
+        <p>Before disclosing personal information, FemiDo will, where appropriate and legally permissible, review such
 
             requests to ensure they are valid, proportionate, and authorized under applicable law.</p>
 
-        <p>36. Accessibility and Privacy</p>
+        <p class="heading">36. Accessibility and Privacy</p>
 
-        <p>SheGo is committed to making its Platform accessible to a diverse range of users while protecting their
+        <p>FemiDo is committed to making its Platform accessible to a diverse range of users while protecting their
 
             privacy.</p>
 
@@ -1595,7 +1595,7 @@ const policyHtml = `<div class="policy-container">
 export default function PrivacyPage() {
     return (
         <>
-            <Navbar />
+            {/* <Navbar /> */}
 
             <main
                 className="policy-page"
@@ -1614,7 +1614,7 @@ export default function PrivacyPage() {
                         </h1>
 
                         <p>
-                            Travel confidently with SheGo. Safe, trusted and
+                            Travel confidently with FemiDo. Safe, trusted and
                             comfortable rides exclusively for women.
                         </p>
 

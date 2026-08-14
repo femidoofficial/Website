@@ -2502,12 +2502,30 @@ img {
         line-height: 1.45;
     }
 
-    .safety-woman {
+    /* .safety-woman {
         width: min(360px, 90vw);
         left: 50%;
         transform: translateX(-50%);
         bottom: 0;
-    }
+    } */
+
+    .safety-woman {
+    position: absolute;
+
+    width: min(300px, 72vw);
+    max-width: 300px;
+    height: auto;
+
+    left: 50%;
+    bottom: 0;
+
+    transform: translateX(-50%);
+
+    object-fit: contain;
+    object-position: bottom center;
+
+    z-index: 3;
+}
 
     .safety-right {
         padding: 35px 20px 45px;
@@ -2945,5 +2963,950 @@ img {
 @media (max-width: 768px) {
     .menu-toggle {
         display: flex;
+    }
+}
+
+
+/* SHEGO FINAL RESPONSIVE + CAROUSEL FIXES */
+.navbar { position: sticky; top: 0; z-index: 10000; overflow: visible; }
+html, body { width: 100%; max-width: 100%; overflow-x: hidden; }
+.testimonial-dots { display:flex; justify-content:center; align-items:center; gap:7px; margin-top:25px; }
+.testimonial-dots button { width:15px; height:15px; padding:0; border:0; border-radius:50%; background:#eeeeee; cursor:pointer; transition:transform .2s ease, background .2s ease; }
+.testimonial-dots button:hover { background:#bdbdbd; transform:scale(1.08); }
+.testimonial-dots button.active { background:#777777; transform:scale(1.05); }
+@media (max-width:768px) {
+  .navbar { height:70px; min-height:70px; padding:8px 18px; display:flex; flex-wrap:nowrap; align-items:center; position:sticky; top:0; z-index:10000; }
+  .logo { flex:0 0 auto; }
+  .logo img { width:88px; height:48px; object-fit:contain; }
+  .navbar .nav-btn { display:flex; width:auto; min-width:118px; height:40px; padding:0 14px; margin-left:auto; margin-right:10px; font-size:13px; }
+  .menu-toggle { display:flex !important; width:42px; height:42px; flex:0 0 42px; align-items:center; justify-content:center; border:0; border-radius:8px; background:#ff2693; color:#fff; font-size:22px; line-height:1; cursor:pointer; z-index:10002; }
+  .nav-links { position:absolute; top:70px; left:0; right:0; width:100%; max-height:calc(100vh - 70px); overflow-y:auto; padding:10px 20px 18px; margin:0; background:#fff; border-bottom:2px solid #e5e5e5; display:none !important; flex-direction:column; align-items:stretch; gap:0; box-shadow:0 8px 18px rgba(0,0,0,.08); }
+  .navbar.menu-open .nav-links { display:flex !important; }
+  .nav-links li { width:100%; list-style:none; }
+  .nav-links a { display:block; width:100%; padding:13px 5px; font-size:16px; }
+  .hero-image { width:min(390px,92vw); max-width:92vw; height:auto; object-fit:contain; }
+  .safety-woman { width:min(360px,88vw); max-width:88vw; height:auto; object-fit:contain; }
+  .ride-card { min-width:0; overflow:hidden; }
+  .ride-image { max-width:52%; max-height:150px; width:auto; height:auto; object-fit:contain; right:0; bottom:0; }
+  .women-image-container { width:100%; height: clamp(200px, 40vw, 300px); max-height:300px; overflow:hidden; display:flex; justify-content:center; align-items:flex-end; }
+  .women-image { width:100%; max-width:100%; height:auto; margin:0; object-fit:contain; object-position:bottom center; }
+  .testimonial-wrapper { width:100%; overflow-x:auto; overflow-y:hidden; scroll-snap-type:x mandatory; }
+  .testimonial-card { scroll-snap-align:start; flex:0 0 88vw; width:88vw; max-width:88vw; min-width:0; height:auto; min-height:285px; }
+  .testimonial-dots { margin-top:20px; }
+  .testimonial-dots button { width:10px; height:10px; }
+  .download-section { width:calc(100% - 40px); max-width:calc(100% - 40px); margin-left:20px; margin-right:20px; overflow:hidden; }
+  .phone-image { width:min(280px,72vw); max-width:72vw; height:auto; object-fit:contain; right:50%; transform:translateX(50%); }
+  .hero img, .safety-section img, .rides-section img, .women-section img, .testimonials-section img, .download-section img, .footer img { max-width:100%; }
+}
+@media (max-width:400px) {
+  .navbar { padding-left:12px; padding-right:12px; }
+  .logo img { width:78px; }
+  .navbar .nav-btn { min-width:105px; padding:0 10px; font-size:12px; }
+  .menu-toggle { width:38px; height:38px; flex-basis:38px; }
+  .hero-image { width:min(350px,90vw); max-width:90vw; }
+  .safety-woman { width:min(315px,84vw); max-width:84vw; }
+  .ride-image { max-width:48%; max-height:125px; }
+  .testimonial-card { flex-basis:90vw; width:90vw; max-width:90vw; }
+  .download-section { width:calc(100% - 24px); max-width:calc(100% - 24px); margin-left:12px; margin-right:12px; }
+  .phone-image { width:min(260px,76vw); max-width:76vw; }
+}
+@media (min-width:769px) { .menu-toggle { display:none !important; } }
+
+
+/* =========================================================
+   RECOVERED NEXT.JS COMMON NAVBAR + RESPONSIVE OVERRIDES
+   ========================================================= */
+
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  min-height: 100%;
+  margin: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+main {
+  width: 100%;
+  min-height: 100vh;
+}
+
+img {
+  max-width: 100%;
+}
+
+/* ---------- Common Navbar ---------- */
+
+.navbar {
+  position: sticky !important;
+  top: 0;
+  left: 0;
+  z-index: 100000 !important;
+  width: 100%;
+  height: 70px;
+  min-height: 70px;
+  padding: 10px 55px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  background: #ffffff;
+  border-bottom: 2px solid #e5e5e5;
+  box-sizing: border-box;
+  overflow: visible !important;
+}
+
+.navbar > .logo {
+  flex: 0 0 auto;
+}
+
+.navbar > .nav-links {
+  display: flex;
+  align-items: center;
+  gap: 35px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.navbar > .nav-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 150px;
+  height: 44px;
+  flex: 0 0 auto;
+  background: #ff2693;
+  color: #ffffff;
+  border-radius: 25px;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.navbar > .menu-toggle,
+.navbar > .mobile-menu {
+  display: none !important;
+}
+
+/* ---------- Testimonial dots: real buttons ---------- */
+
+.testimonial-dots {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin: 24px 0 0;
+}
+
+.testimonial-dots button {
+  appearance: none;
+  width: 9px;
+  height: 9px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: #d7d7d7;
+  cursor: pointer;
+  transition: transform .2s ease, background .2s ease;
+}
+
+.testimonial-dots button.active {
+  width: 11px;
+  height: 11px;
+  background: #ff2693;
+  transform: scale(1.05);
+}
+
+.testimonial-dots button:focus-visible {
+  outline: 2px solid #ff2693;
+  outline-offset: 3px;
+}
+
+/* ---------- Mobile ---------- */
+
+@media (max-width: 768px) {
+  .navbar {
+    height: 65px;
+    min-height: 65px;
+    padding: 8px 18px;
+  }
+
+  .navbar > .nav-links,
+  .navbar > .nav-btn {
+    display: none !important;
+  }
+
+  .navbar > .menu-toggle {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    margin-left: auto;
+    padding: 0;
+    border: 0;
+    border-radius: 8px;
+    background: #ff2693;
+    color: #ffffff;
+    font-size: 22px;
+    line-height: 1;
+    cursor: pointer;
+    z-index: 100002;
+  }
+
+  .navbar > .mobile-menu {
+    position: absolute;
+    top: 65px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    display: none !important;
+    flex-direction: column;
+    gap: 0;
+    margin: 0;
+    padding: 8px 18px 18px;
+    box-sizing: border-box;
+    list-style: none;
+    background: #ffffff;
+    border-top: 1px solid #eeeeee;
+    border-bottom: 2px solid #e5e5e5;
+    box-shadow: 0 8px 18px rgba(0,0,0,.10);
+    z-index: 100001;
+  }
+
+  .navbar > .mobile-menu.active {
+    display: flex !important;
+  }
+
+  .navbar > .mobile-menu li {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .navbar > .mobile-menu li a {
+    display: block;
+    width: 100%;
+    padding: 14px 8px;
+    box-sizing: border-box;
+    color: #000000;
+    background: #ffffff;
+    text-decoration: none;
+    font-size: 16px;
+    text-align: left;
+    border-bottom: 1px solid #eeeeee;
+  }
+
+  .navbar > .mobile-menu li:last-child a {
+    border-bottom: 0;
+  }
+
+  /* Keep the complete page vertically scrollable */
+  html,
+  body {
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  main {
+    min-height: 0;
+    overflow: visible;
+  }
+
+  /* Testimonial carousel */
+  .testimonial-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .testimonial-wrapper::-webkit-scrollbar {
+    display: none;
+  }
+
+  .testimonial-track {
+    gap: 20px;
+    padding-left: 6vw;
+    padding-right: 6vw;
+  }
+
+  .testimonial-card {
+    flex: 0 0 88vw;
+    width: 88vw;
+    max-width: 88vw;
+    min-width: 0;
+    scroll-snap-align: center;
+  }
+
+  .testimonial-dots {
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 400px) {
+  .navbar {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .navbar > .logo img {
+    width: 78px;
+    height: 45px;
+  }
+
+  .navbar > .menu-toggle {
+    width: 38px;
+    height: 38px;
+    flex-basis: 38px;
+  }
+
+  .testimonial-card {
+    flex-basis: 90vw;
+    width: 90vw;
+    max-width: 90vw;
+  }
+}
+
+/* ---------- App download badges ---------- */
+
+.app-download-section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 90px;
+  padding: 45px 30px;
+  box-sizing: border-box;
+  background: #ffffff;
+}
+
+.app-download-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.app-download-box h3 {
+  margin: 0 0 20px;
+  font-size: 24px;
+  color: #171717;
+}
+
+.app-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.app-buttons a {
+  display: block;
+  width: 210px;
+}
+
+.app-buttons img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+@media (max-width: 600px) {
+  .app-download-section {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+}
+
+
+@media (max-width: 768px) {
+    .safety-woman {
+        position: absolute !important;
+
+        width: 285px !important;
+        max-width: 285px !important;
+        height: auto !important;
+
+        left: 50% !important;
+        bottom: -2px !important;
+
+        transform: translateX(-50%) !important;
+
+        object-fit: contain !important;
+        object-position: bottom center !important;
+
+        z-index: 4 !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .safety-woman {
+        width: 275px !important;
+        max-width: 275px !important;
+    }
+}
+
+@media (max-width: 360px) {
+    .safety-woman {
+        width: 255px !important;
+        max-width: 255px !important;
+    }
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.footer {
+    width: 100%;
+    background: #ffffff;
+    color: #171717;
+
+    padding: 64px 55px 30px;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   TOP
+========================================================= */
+
+.footer-top {
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   BRAND
+========================================================= */
+
+.footer-brand {
+    flex: 1;
+}
+
+
+.footer-logo {
+    width: 187px;
+    height: auto;
+
+    display: block;
+}
+
+
+.footer-brand p {
+    margin: 15px 0 0;
+
+    font-size: 20px;
+    line-height: 1.5;
+
+    color: #222;
+}
+
+
+/* =========================================================
+   SOCIAL
+========================================================= */
+
+/* .social-links {
+    display: flex;
+    align-items: center;
+
+    gap: 22px;
+
+    margin-top: 25px;
+}
+
+
+.social-links a {
+    width: 22px;
+    height: 22px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #171717;
+
+    text-decoration: none;
+
+    font-size: 19px;
+
+    transition: 0.2s ease;
+}
+
+
+.social-links a:hover {
+    color: #ff2693;
+} */
+
+.social-links {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-top: 25px;
+}
+
+.social-links a {
+    width: 24px;
+    height: 24px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #171717;
+    text-decoration: none;
+
+    transition: 0.2s ease;
+}
+
+.social-links svg {
+    width: 22px;
+    height: 22px;
+
+    display: block;
+    fill: currentColor;
+}
+
+/* Instagram */
+.social-links a:nth-child(2) svg rect {
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+}
+
+.social-links a:nth-child(2) svg circle {
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+}
+
+.social-links a:nth-child(2) svg .instagram-dot {
+    fill: currentColor;
+    stroke: none;
+}
+
+/* WhatsApp */
+.social-links a:nth-child(3) svg .whatsapp-inner {
+    fill: #ffffff;
+}
+
+/* Hover */
+.social-links a:hover {
+    color: #ff2693;
+    transform: translateY(-2px);
+}
+
+/* =========================================================
+   APP DOWNLOADS
+========================================================= */
+
+.footer-apps {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 52px;
+
+    margin-top: 4px;
+}
+
+
+.footer-app {
+    display: flex;
+    flex-direction: column;
+
+    align-items: flex-start;
+}
+
+
+.footer-app h3 {
+    margin: 0 0 16px;
+
+    font-size: 24px;
+
+    font-weight: 500;
+
+    line-height: 1.2;
+}
+
+
+.footer-app a {
+    display: block;
+
+    width: 180px;
+}
+
+
+.footer-app img {
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    object-fit: contain;
+}
+
+
+/* =========================================================
+   LINKS
+========================================================= */
+
+.footer-links {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+        250px
+        250px
+        1fr;
+
+    column-gap: 222px;
+
+    margin-top: 72px;
+}
+
+
+.footer-column {
+    display: flex;
+    flex-direction: column;
+
+    align-items: flex-start;
+}
+
+
+.footer-column h3 {
+    margin: 0 0 27px;
+
+    font-size: 21px;
+
+    font-weight: 500;
+}
+
+
+.footer-column a {
+    margin-bottom: 14px;
+
+    color: #292929;
+
+    text-decoration: none;
+
+    font-size: 20px;
+
+    line-height: 1.35;
+}
+
+
+.footer-column a:hover {
+    color: #ff2693;
+}
+
+
+/* =========================================================
+   CONTACT
+========================================================= */
+
+.contact-item {
+    display: flex;
+    align-items: flex-start;
+
+    gap: 15px;
+
+    margin-bottom: 17px;
+
+    font-size: 20px;
+
+    line-height: 1.45;
+}
+
+
+.contact-icon {
+    width: 22px;
+
+    flex-shrink: 0;
+
+    font-size: 22px;
+}
+
+
+/* =========================================================
+   COPYRIGHT
+========================================================= */
+
+.footer-bottom {
+    width: 100%;
+
+    margin-top: 88px;
+
+    padding-bottom: 4px;
+
+    border-bottom: 1px solid #777;
+
+    text-align: center;
+}
+
+
+.footer-bottom p {
+    margin: 0 0 26px;
+
+    font-size: 20px;
+
+    line-height: 1.4;
+}
+
+
+.copyright-symbol {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 22px;
+    height: 22px;
+
+    margin: 0 10px;
+
+    border: 1.5px solid #333;
+
+    border-radius: 50%;
+
+    font-size: 14px;
+}
+
+
+.separator {
+    margin: 0 10px;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .footer {
+        padding: 50px 30px 25px;
+    }
+
+    .footer-top {
+        gap: 30px;
+    }
+
+    .footer-apps {
+        gap: 25px;
+    }
+
+    .footer-app a {
+        width: 150px;
+    }
+
+    .footer-links {
+        grid-template-columns:
+            1fr
+            1fr
+            1.3fr;
+
+        column-gap: 30px;
+    }
+
+    .footer-brand p {
+        font-size: 17px;
+    }
+
+    .footer-column a,
+    .contact-item {
+        font-size: 17px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .footer {
+        padding: 45px 20px 25px;
+    }
+
+
+    .footer-top {
+        flex-direction: column;
+
+        gap: 40px;
+    }
+
+
+    .footer-logo {
+        width: 165px;
+    }
+
+
+    .footer-brand p {
+        font-size: 16px;
+
+        line-height: 1.55;
+    }
+
+
+    /* App buttons side by side */
+    .footer-apps {
+        width: 100%;
+
+        display: flex;
+
+        justify-content: space-between;
+
+        gap: 15px;
+
+        margin: 0;
+    }
+
+
+    .footer-app {
+        flex: 1;
+    }
+
+
+    .footer-app h3 {
+        font-size: 18px;
+
+        margin-bottom: 12px;
+    }
+
+
+    .footer-app a {
+        width: 100%;
+
+        max-width: 170px;
+    }
+
+
+    /* Footer links */
+    .footer-links {
+        display: grid;
+
+        grid-template-columns: 1fr 1fr;
+
+        gap: 40px 20px;
+
+        margin-top: 55px;
+    }
+
+
+    .footer-column h3 {
+        font-size: 18px;
+
+        margin-bottom: 20px;
+    }
+
+
+    .footer-column a {
+        font-size: 16px;
+
+        margin-bottom: 12px;
+    }
+
+
+    .footer-column.contact {
+        grid-column: 1 / -1;
+    }
+
+
+    .contact-item {
+        font-size: 16px;
+
+        gap: 12px;
+
+        margin-bottom: 15px;
+    }
+
+
+    /* Copyright */
+    .footer-bottom {
+        margin-top: 55px;
+    }
+
+
+    .footer-bottom p {
+        font-size: 14px;
+
+        line-height: 1.8;
+
+        margin-bottom: 20px;
+    }
+
+
+    .copyright-symbol {
+        width: 19px;
+        height: 19px;
+
+        font-size: 12px;
+
+        margin: 0 5px;
+    }
+
+
+    .separator {
+        margin: 0 5px;
+    }
+}
+
+
+/* =========================================================
+   SMALL PHONE
+========================================================= */
+
+@media (max-width: 380px) {
+
+    .footer {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+
+    .footer-apps {
+        gap: 10px;
+    }
+
+
+    .footer-app h3 {
+        font-size: 16px;
+    }
+
+
+    .footer-app a {
+        max-width: 145px;
+    }
+
+
+    .footer-links {
+        grid-template-columns: 1fr;
+    }
+
+
+    .footer-column.contact {
+        grid-column: auto;
+    }
+
+
+    .footer-bottom p {
+        font-size: 12px;
     }
 }

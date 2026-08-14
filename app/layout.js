@@ -1,7 +1,9 @@
 import "./globals.css";
+import Navbar from "../components/Navbar";
+import Footer from "../components/footer";
 
 export const metadata = {
-  title: "SheGo | Women Driving Women Forward",
+  title: "FemiDo | Women Driving Women Forward",
   description:
     "Indore’s dedicated ride community connecting verified female drivers with women commuters.",
 };
@@ -9,7 +11,15 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <Navbar />
+
+        <main>
+          {children}
+        </main>
+
+        <Footer />
+      </body>
     </html>
   );
 }

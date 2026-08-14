@@ -1,39 +1,124 @@
 'use client';
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export default function Home() {
-  const [menuOpen, setMenuOpen] = useState(false);
+  const [currentTestimonial, setCurrentTestimonial] = useState(0);
+  const testimonialWrapperRef = useRef(null);
 
-  const toggleMenu = () => setMenuOpen((open) => !open);
-  const closeMenu = () => setMenuOpen(false);
+  const testimonialCount = 3;
+
+  const getCards = () => {
+    const wrapper = testimonialWrapperRef.current;
+    if (!wrapper) return [];
+    return Array.from(wrapper.querySelectorAll(".testimonial-card"));
+  };
+
+  const getTargetForCard = (card) => {
+    const wrapper = testimonialWrapperRef.current;
+    if (!wrapper || !card) return 0;
+
+    return Math.max(
+      0,
+      card.offsetLeft - (wrapper.clientWidth - card.offsetWidth) / 2
+    );
+  };
+
+  const scrollToTestimonial = (index, smooth = true) => {
+    const wrapper = testimonialWrapperRef.current;
+    if (!wrapper) return;
+
+    const cards = getCards();
+    const card = cards[index];
+    if (!card) return;
+
+    wrapper.scrollTo({
+      left: getTargetForCard(card),
+      behavior: smooth ? "smooth" : "auto",
+    });
+
+    setCurrentTestimonial(index);
+  };
+
+  useEffect(() => {
+    const wrapper = testimonialWrapperRef.current;
+    if (!wrapper) return;
+
+    let ticking = false;
+
+    const updateIndicator = () => {
+      if (ticking) return;
+      ticking = true;
+
+      window.requestAnimationFrame(() => {
+        const cards = getCards();
+
+        if (cards.length) {
+          const center = wrapper.scrollLeft + wrapper.clientWidth / 2;
+
+          let closestIndex = 0;
+          let closestDistance = Infinity;
+
+          cards.forEach((card, index) => {
+            const cardCenter = card.offsetLeft + card.offsetWidth / 2;
+            const distance = Math.abs(cardCenter - center);
+
+            if (distance < closestDistance) {
+              closestDistance = distance;
+              closestIndex = index;
+            }
+          });
+
+          setCurrentTestimonial(closestIndex);
+        }
+
+        ticking = false;
+      });
+    };
+
+    wrapper.addEventListener("scroll", updateIndicator, { passive: true });
+    window.addEventListener("resize", updateIndicator);
+
+    updateIndicator();
+
+    return () => {
+      wrapper.removeEventListener("scroll", updateIndicator);
+      window.removeEventListener("resize", updateIndicator);
+    };
+  }, []);
+
+  useEffect(() => {
+    const timer = window.setInterval(() => {
+      setCurrentTestimonial((previous) => {
+        const next = (previous + 1) % testimonialCount;
+
+        requestAnimationFrame(() => {
+          const wrapper = testimonialWrapperRef.current;
+          if (!wrapper) return;
+
+          const cards = Array.from(
+            wrapper.querySelectorAll(".testimonial-card")
+          );
+          const card = cards[next];
+          if (!card) return;
+
+          wrapper.scrollTo({
+            left: getTargetForCard(card),
+            behavior: "smooth",
+          });
+        });
+
+        return next;
+      });
+    }, 5000);
+
+    return () => window.clearInterval(timer);
+  }, []);
+
 
   return (
     <>
-      <nav className="navbar">
-      
-          <div className="logo">
-              <img src="/assets/Logo/femido.png" alt="Logo" />
-          </div>
-      
-          <ul className="nav-links">
-              <li><a href="#">Home</a></li>
-              <li><a href="#">Services</a></li>
-              <li><a href="#">Driver</a></li>
-              <li><a href="#">About Us</a></li>
-              <li><a href="#">Safety</a></li>
-              <li><a href="#">Blog</a></li>
-              <li><a href="#">Contact Us</a></li>
-          </ul>
-      
-          <a href="#" className="nav-btn" onClick={closeMenu}>Downloaad app</a>
-      
-          <button className="menu-toggle" type="button" aria-label={menuOpen ? "Close menu" : "Open menu"} aria-expanded={menuOpen} onClick={toggleMenu}>
-              {menuOpen ? "×" : "☰"}
-          </button>
-      
-      </nav>
-      <section className="hero">
+<section id="home" className="hero">
       
           
           <div className="hero-content">
@@ -69,7 +154,7 @@ export default function Home() {
       
       </section>
       
-      <section className="safety-section">
+      <section id="safety" className="safety-section">
       
          
           <div className="safety-left">
@@ -140,7 +225,7 @@ export default function Home() {
       </section>
       
       
-      <section className="rides-section">
+      <section id="services" className="rides-section">
       
           <h2 className="rides-title">Rides Tailored for Every Journey</h2>
       
@@ -210,7 +295,7 @@ export default function Home() {
       
       </section>
       
-      <section className="women-section">
+      <section id="about" className="women-section">
       
           <div className="women-content">
       
@@ -236,7 +321,7 @@ export default function Home() {
       
       </section>
       
-      <section className="why-section">
+      <section id="driver" className="why-section">
       
           <h2 className="why-title">Why Drive with SheGo?</h2>
       
@@ -359,7 +444,7 @@ export default function Home() {
       
       </section>
       
-      <section className="testimonials-section">
+      <section id="blog" className="testimonials-section">
       
           <h2>Hear It From Our Customer</h2>
       
@@ -457,14 +542,17 @@ export default function Home() {
       
         
       
-          <div className="testimonial-dots">
-      
-              <span></span>
-              <span></span>
-              <span className="active"></span>
-              <span></span>
-              <span></span>
-      
+          <div className="testimonial-dots" aria-label="Testimonial navigation">
+              {Array.from({ length: testimonialCount }).map((_, index) => (
+                  <button
+                      key={index}
+                      type="button"
+                      className={currentTestimonial === index ? "active" : ""}
+                      onClick={() => scrollToTestimonial(index)}
+                      aria-label={`Go to testimonial ${index + 1}`}
+                      aria-current={currentTestimonial === index ? "true" : undefined}
+                  />
+              ))}
           </div>
       
       </section>
@@ -508,135 +596,6 @@ export default function Home() {
           </div>
       
       </section>
-      
-      
-      <footer className="footer">
-      
-          <div className="footer-top">
-      
-             
-              <div className="footer-brand">
-      
-                  <img
-                      src="/assets/Logo/femifooter.png"
-                      alt="SheGo Logo"
-                      className="footer-logo"
-                   />
-      
-                  <p>
-                      Indore’s dedicated ride community.<br />
-                      Safe, reliable, and comfortable daily travel across the city.
-                  </p>
-      
-                  <div className="social-links">
-      
-                      <a href="#" aria-label="Facebook">
-                          "f"
-                      </a>
-      
-                      <a href="#" aria-label="Instagram">
-                          "◎"
-                      </a>
-      
-                      <a href="#" aria-label="WhatsApp">
-                          "◔"
-                      </a>
-      
-                      <a href="#" aria-label="LinkedIn">
-                          "in"
-                      </a>
-      
-                  </div>
-      
-              </div>
-      
-      
-              
-              <div className="footer-column">
-      
-                  <h3>Quick Links</h3>
-      
-                  <a href="#">Home</a>
-                  <a href="#">Services</a>
-                  <a href="#">Drivers</a>
-                  <a href="#">About Us</a>
-                  <a href="#">Safety</a>
-                  <a href="#">Blog</a>
-                  <a href="#">Contact Us</a>
-      
-              </div>
-      
-      
-              
-              <div className="footer-column legal">
-      
-                  <h3>Legal Links</h3>
-      
-                  <a href="#">Terms & Condition</a>
-                  <a href="/privacy">Privacy Policy</a>
-                  <a href="#">Support Partner</a>
-      
-              </div>
-      
-      
-              
-              <div className="footer-column contact">
-      
-                  <h3>Contact Details</h3>
-      
-                  <div className="contact-item">
-      
-                      "●"
-      
-                      <span>
-                          139, Uday Nagar, Kanadia road,<br />
-                          Indore,452016
-                      </span>
-      
-                  </div>
-      
-                  <div className="contact-item">
-      
-                      "☎"
-      
-                      <span>
-                          +91 8989494417
-                      </span>
-      
-                  </div>
-      
-                  <div className="contact-item">
-      
-                      "✉"
-      
-                      <span>
-                          shegoindore@gmail.com
-                      </span>
-      
-                  </div>
-      
-              </div>
-      
-          </div>
-      
-      
-        
-      
-          <div className="footer-bottom">
-      
-              <p>
-                  Copyright
-                  <span className="copyright-symbol">©</span>
-                  2026
-                  <span className="separator">•</span>
-                  Mlock Innovations LLP
-                  <span className="separator">•</span>
-                  All Rights Reserved
-              </p>
-      
-          </div>
-      
-      </footer>
-    </>
+</>
   );
 }

@@ -12,7 +12,7 @@ export default function Navbar() {
     <nav className="navbar">
       <div className="logo">
         <Link href="/" onClick={close}>
-          <img src="/assets/Logo/header logo.png" alt="SheGo Logo" />
+          <img src="/assets/Logo/newlogo.png" alt="SheGo Logo" />
         </Link>
       </div>
 
