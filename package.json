@@ -1,5 +1,5 @@
 {
-  "name": "shego-nextjs",
+  "name": "FemiDo-nextjs",
   "version": "1.0.0",
   "private": true,
   "scripts": {
@@ -8,8 +8,11 @@
     "start": "next start"
   },
   "dependencies": {
+    "@tailwindcss/postcss": "^4.3.3",
     "next": "latest",
+    "postcss": "^8.5.26",
     "react": "latest",
-    "react-dom": "latest"
+    "react-dom": "latest",
+    "tailwindcss": "^4.3.3"
   }
 }

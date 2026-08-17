@@ -1,119 +1,148 @@
 'use client';
 
-import { useEffect, useRef, useState } from "react";
+import DownloadSection from "../components/DownloadSection.jsx";
+import { useEffect, useRef, useState, useCallback } from "react";
+
+const testimonialsData = [
+  {
+    id: "isha-thakral",
+    name: "Isha Thakral",
+    stars: "★ ★ ★ ★ ★",
+    text: "Working late shifts in the city made me cautious. FemiDo’s real-time tracking feature reassures both me and my family every night.",
+    image: "/assets/drivers/Group 21.png",
+  },
+  {
+    id: "riya-malhotra",
+    name: "Riya Malhotra",
+    stars: "★ ★ ★ ★ ★",
+    text: "As a freelance photographer often on the move, FemiDo keeps me connected and safe, letting me focus on my art without worry.",
+    image: "/assets/drivers/Group 21.png",
+  },
+  {
+    id: "ananya-sharma",
+    name: "Ananya Sharma",
+    stars: "★ ★ ★ ★ ★",
+    text: "Jogging late in the evening used to feel risky. FemiDo gives me peace of mind knowing I can get home safely.",
+    image: "/assets/drivers/Group 21.png",
+  },
+];
 
 export default function Home() {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
-  const testimonialWrapperRef = useRef(null);
+  const [trackTransform, setTrackTransform] = useState(0);
 
-  const testimonialCount = 3;
+  const wrapperRef = useRef(null);
+  const trackRef = useRef(null);
+  const touchStartX = useRef(null);
+  const touchEndX = useRef(null);
+  const isDragging = useRef(false);
 
-  const getCards = () => {
-    const wrapper = testimonialWrapperRef.current;
-    if (!wrapper) return [];
-    return Array.from(wrapper.querySelectorAll(".testimonial-card"));
-  };
+  const updatePosition = useCallback((index) => {
+    const wrapper = wrapperRef.current;
+    const track = trackRef.current;
+    if (!wrapper || !track) return;
 
-  const getTargetForCard = (card) => {
-    const wrapper = testimonialWrapperRef.current;
-    if (!wrapper || !card) return 0;
-
-    return Math.max(
-      0,
-      card.offsetLeft - (wrapper.clientWidth - card.offsetWidth) / 2
-    );
-  };
-
-  const scrollToTestimonial = (index, smooth = true) => {
-    const wrapper = testimonialWrapperRef.current;
-    if (!wrapper) return;
-
-    const cards = getCards();
+    const cards = track.querySelectorAll(".testimonial-card");
     const card = cards[index];
     if (!card) return;
 
-    wrapper.scrollTo({
-      left: getTargetForCard(card),
-      behavior: smooth ? "smooth" : "auto",
-    });
+    const wrapperWidth = wrapper.clientWidth;
+    const cardLeft = card.offsetLeft;
+    const cardWidth = card.offsetWidth;
 
-    setCurrentTestimonial(index);
-  };
+    // Calculate offset to precisely center the card inside the wrapper
+    const cardCenter = cardLeft + cardWidth / 2;
+    const viewportCenter = wrapperWidth / 2;
 
+    setTrackTransform(viewportCenter - cardCenter);
+  }, []);
+
+  const goToSlide = useCallback((index) => {
+    const total = testimonialsData.length;
+    const normalized = ((index % total) + total) % total;
+    setCurrentTestimonial(normalized);
+  }, []);
+
+  // Update position on active slide change
   useEffect(() => {
-    const wrapper = testimonialWrapperRef.current;
-    if (!wrapper) return;
+    updatePosition(currentTestimonial);
+  }, [currentTestimonial, updatePosition]);
 
-    let ticking = false;
+  // Recalculate on window resize or when layout stabilizes
+  useEffect(() => {
+    const handleResize = () => updatePosition(currentTestimonial);
+    window.addEventListener("resize", handleResize);
 
-    const updateIndicator = () => {
-      if (ticking) return;
-      ticking = true;
-
-      window.requestAnimationFrame(() => {
-        const cards = getCards();
-
-        if (cards.length) {
-          const center = wrapper.scrollLeft + wrapper.clientWidth / 2;
-
-          let closestIndex = 0;
-          let closestDistance = Infinity;
-
-          cards.forEach((card, index) => {
-            const cardCenter = card.offsetLeft + card.offsetWidth / 2;
-            const distance = Math.abs(cardCenter - center);
-
-            if (distance < closestDistance) {
-              closestDistance = distance;
-              closestIndex = index;
-            }
-          });
-
-          setCurrentTestimonial(closestIndex);
-        }
-
-        ticking = false;
-      });
-    };
-
-    wrapper.addEventListener("scroll", updateIndicator, { passive: true });
-    window.addEventListener("resize", updateIndicator);
-
-    updateIndicator();
+    // Initial positioning
+    updatePosition(currentTestimonial);
+    const t1 = setTimeout(() => updatePosition(currentTestimonial), 80);
+    const t2 = setTimeout(() => updatePosition(currentTestimonial), 300);
 
     return () => {
-      wrapper.removeEventListener("scroll", updateIndicator);
-      window.removeEventListener("resize", updateIndicator);
+      window.removeEventListener("resize", handleResize);
+      clearTimeout(t1);
+      clearTimeout(t2);
     };
-  }, []);
+  }, [currentTestimonial, updatePosition]);
 
-  useEffect(() => {
-    const timer = window.setInterval(() => {
-      setCurrentTestimonial((previous) => {
-        const next = (previous + 1) % testimonialCount;
+  // Touch swipe events
+  const handleTouchStart = (e) => {
+    touchStartX.current = e.touches[0].clientX;
+    touchEndX.current = e.touches[0].clientX;
+  };
 
-        requestAnimationFrame(() => {
-          const wrapper = testimonialWrapperRef.current;
-          if (!wrapper) return;
+  const handleTouchMove = (e) => {
+    touchEndX.current = e.touches[0].clientX;
+  };
 
-          const cards = Array.from(
-            wrapper.querySelectorAll(".testimonial-card")
-          );
-          const card = cards[next];
-          if (!card) return;
+  const handleTouchEnd = () => {
+    if (touchStartX.current !== null && touchEndX.current !== null) {
+      const diff = touchStartX.current - touchEndX.current;
+      if (diff > 45) {
+        goToSlide(currentTestimonial + 1);
+      } else if (diff < -45) {
+        goToSlide(currentTestimonial - 1);
+      }
+    }
+    touchStartX.current = null;
+    touchEndX.current = null;
+  };
 
-          wrapper.scrollTo({
-            left: getTargetForCard(card),
-            behavior: "smooth",
-          });
-        });
+  // Mouse drag events for desktop
+  const handleMouseDown = (e) => {
+    isDragging.current = true;
+    touchStartX.current = e.clientX;
+    touchEndX.current = e.clientX;
+  };
 
-        return next;
-      });
-    }, 5000);
+  const handleMouseMove = (e) => {
+    if (!isDragging.current) return;
+    touchEndX.current = e.clientX;
+  };
 
-    return () => window.clearInterval(timer);
-  }, []);
+  const handleMouseUp = () => {
+    if (isDragging.current) {
+      isDragging.current = false;
+      if (touchStartX.current !== null && touchEndX.current !== null) {
+        const diff = touchStartX.current - touchEndX.current;
+        if (diff > 45) {
+          goToSlide(currentTestimonial + 1);
+        } else if (diff < -45) {
+          goToSlide(currentTestimonial - 1);
+        }
+      }
+      touchStartX.current = null;
+      touchEndX.current = null;
+    }
+  };
+
+  const handleKeyDown = (e) => {
+    if (e.key === "ArrowLeft") {
+      goToSlide(currentTestimonial - 1);
+    } else if (e.key === "ArrowRight") {
+      goToSlide(currentTestimonial + 1);
+    }
+  };
 
 
   return (
@@ -302,7 +331,7 @@ export default function Home() {
               <h2>By Women, For Women.</h2>
       
               <p>
-                  SheGo isn't just a ride service—it's a movement creating safe urban mobility for
+                  FemiDo isn't just a ride service—it's a movement creating safe urban mobility for
                   <br />
                   riders while financial independence for women captains across Indore.
               </p>
@@ -314,7 +343,7 @@ export default function Home() {
           <div className="women-image-container">
               <img
                   src="/assets/drivers/image 28.png"
-                  alt="Women of SheGo"
+                  alt="Women of FemiDo"
                   className="women-image"
                />
           </div>
@@ -323,7 +352,7 @@ export default function Home() {
       
       <section id="driver" className="why-section">
       
-          <h2 className="why-title">Why Drive with SheGo?</h2>
+          <h2 className="why-title">Why Drive with FemiDo?</h2>
       
           <div className="why-cards">
       
@@ -444,126 +473,120 @@ export default function Home() {
       
       </section>
       
-      <section id="blog" className="testimonials-section">
-      
-          <h2>Hear It From Our Customer</h2>
-      
-          <div className="testimonial-wrapper">
-      
-              <div className="testimonial-track">
-      
-                  
-                  <div className="testimonial-card">
-      
-                      <div className="quote">“</div>
-      
-                      <div className="testimonial-text">
-                          <h3>Isha Thakral</h3>
-      
-                          <div className="stars">★ ★ ★ ★ ★</div>
-      
-                          <p>
-                              Working late shifts in the city made me cautious.
-                              SheGo’s real-time tracking feature reassures both
-                              me and my family every night.
-                          </p>
-                      </div>
-      
-                      <div className="customer-image">
-                          <div className="pink-circle"></div>
-                          <img
-                              src="/assets/drivers/Group 21.png"
-                              alt="Isha Thakral"
-                           />
-                      </div>
-      
+      <section
+        id="blog"
+        className="testimonials-section"
+        onMouseLeave={() => {
+          isDragging.current = false;
+        }}
+        tabIndex={0}
+        onKeyDown={handleKeyDown}
+        aria-label="Customer Testimonials"
+      >
+        <h2>Hear It From Our Customer</h2>
+
+        <div
+          className="testimonial-wrapper"
+          ref={wrapperRef}
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
+          onMouseDown={handleMouseDown}
+          onMouseMove={handleMouseMove}
+          onMouseUp={handleMouseUp}
+        >
+          <div
+            className="testimonial-track"
+            ref={trackRef}
+            style={{
+              transform: `translateX(${trackTransform}px)`,
+            }}
+          >
+            {testimonialsData.map((item, index) => {
+              const isActive = currentTestimonial === index;
+              return (
+                <div
+                  key={item.id}
+                  className={`testimonial-card ${isActive ? "active" : ""}`}
+                  onClick={() => goToSlide(index)}
+                  role="button"
+                  tabIndex={0}
+                  aria-label={`Testimonial from ${item.name}`}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter" || e.key === " ") {
+                      goToSlide(index);
+                    }
+                  }}
+                >
+                  <div className="quote">“</div>
+
+                  <div className="testimonial-text">
+                    <h3>{item.name}</h3>
+
+                    <div className="stars">{item.stars}</div>
+
+                    <p>{item.text}</p>
                   </div>
-      
-      
-                  
-                  <div className="testimonial-card">
-      
-                      <div className="quote">“</div>
-      
-                      <div className="testimonial-text">
-                          <h3>Riya Malhotra</h3>
-      
-                          <div className="stars">★ ★ ★ ★ ★</div>
-      
-                          <p>
-                              As a freelance photographer often on the move,
-                              SheGo keeps me connected and safe, letting me
-                              focus on my art without worry.
-                          </p>
-                      </div>
-      
-                      <div className="customer-image">
-                          <div className="pink-circle"></div>
-                          <img
-                              src="/assets/drivers/Group 21.png"
-                              alt="Riya Malhotra"
-                           />
-                      </div>
-      
+
+                  <div className="customer-image">
+                    <div className="pink-circle"></div>
+                    <img src={item.image} alt={item.name} />
                   </div>
-      
-      
-                  
-                  <div className="testimonial-card">
-      
-                      <div className="quote">“</div>
-      
-                      <div className="testimonial-text">
-                          <h3>Ananya Sharma</h3>
-      
-                          <div className="stars">★ ★ ★ ★ ★</div>
-      
-                          <p>
-                              Jogging late in the evening used to feel risky.
-                              SheGo gives me peace of mind knowing I can get
-                              home safely.
-                          </p>
-                      </div>
-      
-                      <div className="customer-image">
-                          <div className="pink-circle"></div>
-                          <img
-                              src="/assets/drivers/Group 21.png"
-                              alt="Ananya Sharma"
-                           />
-                      </div>
-      
-                  </div>
-      
-              </div>
-      
+                </div>
+              );
+            })}
           </div>
-      
-      
-        
-      
-          <div className="testimonial-dots" aria-label="Testimonial navigation">
-              {Array.from({ length: testimonialCount }).map((_, index) => (
-                  <button
-                      key={index}
-                      type="button"
-                      className={currentTestimonial === index ? "active" : ""}
-                      onClick={() => scrollToTestimonial(index)}
-                      aria-label={`Go to testimonial ${index + 1}`}
-                      aria-current={currentTestimonial === index ? "true" : undefined}
-                  />
-              ))}
+        </div>
+
+        <div className="testimonial-controls" aria-label="Testimonial navigation">
+          <button
+            type="button"
+            className="testimonial-arrow prev"
+            onClick={() => goToSlide(currentTestimonial - 1)}
+            aria-label="Previous testimonial"
+          >
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+          </button>
+
+          <div className="testimonial-dots" aria-label="Testimonial pagination dots">
+            {testimonialsData.map((item, index) => (
+              <button
+                key={item.id}
+                type="button"
+                className={currentTestimonial === index ? "active" : ""}
+                onClick={() => goToSlide(index)}
+                aria-label={`Go to slide ${index + 1}: ${item.name}`}
+                aria-current={currentTestimonial === index ? "true" : undefined}
+              />
+            ))}
           </div>
-      
+
+          <button
+            type="button"
+            className="testimonial-arrow next"
+            onClick={() => goToSlide(currentTestimonial + 1)}
+            aria-label="Next testimonial"
+          >
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </button>
+        </div>
       </section>
+
+
+
+      <DownloadSection />
       
-      <section className="download-section">
+      {/* <section className="download-section">
       
          
           <div className="download-content">
               <h2>
                   Ready to Ride<br />
-                  with SheGo?
+                  with FemiDo?
               </h2>
       
               <p>
@@ -590,12 +613,12 @@ export default function Home() {
               <img
                   src="/assets/drivers/Rectangle.png"
                   className="phone-image"
-                  alt="SheGo App"
+                  alt="FemiDo App"
                />
       
           </div>
       
-      </section>
+      </section> */}
 </>
   );
 }

@@ -1,6 +1,6 @@
-# SheGo Next.js — Home + Privacy
+# FemiDo Next.js — Home + Privacy
 
-The uploaded SheGo HTML has been converted into a Next.js App Router project.
+The uploaded FemiDo HTML has been converted into a Next.js App Router project.
 
 ## Routes
 
