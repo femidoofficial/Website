@@ -8,6 +8,13 @@ export const metadata = {
     "Indore’s dedicated ride community connecting verified female drivers with women commuters.",
 };
 
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: true,
+};
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
