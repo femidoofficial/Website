@@ -1,5 +1,7 @@
 'use client';
 
+import Rides from "../components/Rides.jsx";
+import Womens from "../components/Womens.jsx";
 import DownloadSection from "../components/DownloadSection.jsx";
 import { useEffect, useRef, useState, useCallback } from "react";
 
@@ -28,8 +30,8 @@ const testimonialsData = [
 ];
 
 export default function Home() {
-  const [currentTestimonial, setCurrentTestimonial] = useState(0);
-  const [trackTransform, setTrackTransform] = useState(0);
+  const [currentTestimonial, setCurrentTestimonial] = useState(1);
+  const [trackTransform, setTrackTransform] = useState(1);
 
   const wrapperRef = useRef(null);
   const trackRef = useRef(null);
@@ -165,7 +167,7 @@ export default function Home() {
       
               <div className="hero-buttons">
                   <a href="#" className="download-btn">Download App</a>
-                  <a href="#" className="explore-btn">Explore the Vision</a>
+                  <a href="/aboutus" className="explore-btn">Explore the Vision</a>
               </div>
       
           </div>
@@ -247,14 +249,18 @@ export default function Home() {
       
               </div>
       
-              <a href="#" className="read-more">Read More</a>
+              <a href="safety" className="read-more">Read More</a>
       
           </div>
       
       </section>
+
+
+      <Rides />
+      <Womens />
       
       
-      <section id="services" className="rides-section">
+      {/* <section id="services" className="rides-section">
       
           <h2 className="rides-title">Rides Tailored for Every Journey</h2>
       
@@ -320,11 +326,11 @@ export default function Home() {
       
           </div>
       
-           {/* <a href="#" className="rides-button">Read More</a>  */}
+           
       
-      </section>
+      </section> */}
       
-      <section id="about" className="women-section">
+      {/* <section id="about" className="women-section">
       
           <div className="women-content">
       
@@ -342,13 +348,13 @@ export default function Home() {
       
           <div className="women-image-container">
               <img
-                  src="/assets/drivers/image 28.png"
+                  src="/assets/drivers/image 91.png"
                   alt="Women of FemiDo"
                   className="women-image"
                />
           </div>
       
-      </section>
+      </section> */}
       
       <section id="driver" className="why-section">
       

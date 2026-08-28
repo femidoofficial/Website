@@ -12,17 +12,17 @@ export default function Navbar() {
     <nav className="navbar">
       <div className="logo">
         <Link href="/" onClick={close}>
-          <img src="/assets/Logo/newlogo.png" alt="SheGo Logo" />
+          <img src="/assets/Logo/newlogo.png" alt="FemiDo Logo" />
         </Link>
       </div>
 
       <ul className="nav-links">
         <li><Link href="/" onClick={close}>Home</Link></li>
-        <li><a href="/#services" onClick={close}>Services</a></li>
-        <li><a href="/#driver" onClick={close}>Driver</a></li>
+        <li><a href="/services" onClick={close}>Services</a></li>
+        <li><a href="/driver" onClick={close}>Drivers</a></li>
         <li><a href="/aboutus" onClick={close}>About Us</a></li>
-        <li><a href="/#safety" onClick={close}>Safety</a></li>
-        <li><a href="/#blog" onClick={close}>Blog</a></li>
+        <li><a href="/safety" onClick={close}>Safety</a></li>
+        <li><a href="/blog" onClick={close}>Blog</a></li>
         <li><a href="/contact" onClick={close}>Contact Us</a></li>
       </ul>
 
@@ -42,11 +42,11 @@ export default function Navbar() {
 
       <ul className={`mobile-menu ${open ? "active" : ""}`}>
         <li><Link href="/" onClick={close}>Home</Link></li>
-        <li><a href="/#services" onClick={close}>Services</a></li>
-        <li><a href="/#driver" onClick={close}>Driver</a></li>
+        <li><a href="/services" onClick={close}>Services</a></li>
+        <li><a href="/driver" onClick={close}>Drivers</a></li>
         <li><a href="/aboutus" onClick={close}>About Us</a></li>
-        <li><a href="/#safety" onClick={close}>Safety</a></li>
-        <li><a href="/#blog" onClick={close}>Blog</a></li>
+        <li><a href="/safety" onClick={close}>Safety</a></li>
+        <li><a href="/blog" onClick={close}>Blog</a></li>
         <li><a href="/contact" onClick={close}>Contact Us</a></li>
       </ul>
     </nav>

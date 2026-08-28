@@ -105,6 +105,8 @@ a {
 .navbar {
     position: fixed;
     top: 0;
+    left: 0;
+    right: 0;
     z-index: 1000;
 
     width: 100%;
@@ -2055,8 +2057,10 @@ img {
 
     /* NAVBAR */
     .navbar {
-        position: sticky;
+        position: fixed;
         top: 0;
+        left: 0;
+        right: 0;
         height: 70px;
         min-height: 70px;
         padding: 8px 18px;
@@ -2626,10 +2630,10 @@ img {
 
 
 /* SHEGO FINAL RESPONSIVE OVERRIDES */
-.navbar { position: sticky; top: 0; z-index: 10000; overflow: visible; }
+.navbar { position: fixed; top: 0; z-index: 10000; overflow: visible; }
 html, body { width: 100%; max-width: 100%; overflow-x: hidden; }
 @media (max-width:768px) {
-  .navbar { height:70px; min-height:70px; padding:8px 18px; display:flex; flex-wrap:nowrap; align-items:center; position:sticky; top:0; z-index:10000; }
+  .navbar { height:70px; min-height:70px; padding:8px 18px; display:flex; flex-wrap:nowrap; align-items:center; position:fixed; top:0; z-index:10000; }
   .logo { flex:0 0 auto; }
   .logo img { width:88px; height:48px; object-fit:contain; }
   .navbar .nav-btn { display:flex; width:auto; min-width:118px; height:40px; padding:0 14px; margin-left:auto; margin-right:10px; font-size:13px; }
@@ -2674,6 +2678,7 @@ body {
   margin: 0;
   overflow-x: hidden;
   overflow-y: auto;
+  padding-top: 20px;
 }
 
 main {
@@ -2688,9 +2693,10 @@ img {
 /* ---------- Common Navbar ---------- */
 
 .navbar {
-  position: sticky !important;
+  position: fixed !important;
   top: 0;
   left: 0;
+  right: 0;
   z-index: 100000 !important;
   width: 100%;
   height: 70px;
@@ -3156,7 +3162,7 @@ img {
 
     column-gap: 222px;
 
-    margin-top: 72px;
+    margin-top: -20px;
 }
 
 
@@ -3223,11 +3229,28 @@ img {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 24px;
-    height: 24px;
+    width: 30px;
+    height: 30px;
     flex-shrink: 0;
     margin-top: 2px;
     color: #171717;
+}
+
+.footer .contact-icon {
+    background: #f00091;
+    color: #ffffff;
+    border-radius: 50%;
+}
+
+.footer .contact-icon svg {
+    width: 22px;
+    height: 22px;
+    fill: none;
+    stroke: #ffffff;
+    stroke-width: 2;
+    display: block;
+    visibility: visible;
+    opacity: 1;
 }
 
 .contact-icon svg {
@@ -3251,7 +3274,7 @@ img {
 .footer-bottom {
     width: 100%;
 
-    margin-top: 88px;
+    margin-top: 38px;
 
     padding-bottom: 4px;
 
@@ -3262,11 +3285,12 @@ img {
 
 
 .footer-bottom p {
-    margin: 0 0 26px;
+    margin: 0 0 6px;
 
     font-size: 20px;
 
     line-height: 1.4;
+    
 }
 
 
@@ -3279,13 +3303,13 @@ img {
     width: 22px;
     height: 22px;
 
-    margin: 0 10px;
+    margin: 0 0px;
 
-    border: 1.5px solid #333;
+    /* border: 1.5px solid #333; */
 
     border-radius: 50%;
 
-    font-size: 14px;
+    font-size: 22px;
 }
 
 

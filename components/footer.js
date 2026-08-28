@@ -129,11 +129,11 @@ export default function Footer() {
             Services
           </Link>
 
-          <Link href="/drivers">
+          <Link href="/driver">
             Drivers
           </Link>
 
-          <Link href="/about">
+          <Link href="/aboutus">
             About Us
           </Link>
 
@@ -225,8 +225,7 @@ export default function Footer() {
       <div className="footer-bottom">
 
         <p>
-
-          Copyright
+  
 
           <span className="copyright-symbol">
             ©
@@ -234,15 +233,11 @@ export default function Footer() {
 
           2026
 
-          <span className="separator">
-            •
-          </span>
+         
 
-          Mlock Innovations LLP
+          Mlock Innovations LLP.
 
-          <span className="separator">
-            •
-          </span>
+          
 
           All Rights Reserved
 
