@@ -1,8 +1,93 @@
 "use client";
 import React, { useState } from "react";
-import FAQ from "../../components/FAQ.jsx";
+import FAQ from "../../components/faq.jsx";
 
-export default function ContactPage(){
+export default function ContactPage() {
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+    subject: "",
+    message: "",
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [statusMessage, setStatusMessage] = useState("");
+  const [statusType, setStatusType] = useState(null);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+    if (statusMessage) {
+      setStatusMessage("");
+      setStatusType(null);
+    }
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setStatusMessage("");
+    setStatusType(null);
+
+    const { firstName, lastName, email, phone, subject, message } = formData;
+    if (
+      !firstName.trim() ||
+      !lastName.trim() ||
+      !email.trim() ||
+      !phone.trim() ||
+      !subject.trim() ||
+      !message.trim()
+    ) {
+      setStatusType("error");
+      setStatusMessage("Please fill all required fields.");
+      return;
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email.trim())) {
+      setStatusType("error");
+      setStatusMessage("Please enter a valid email address.");
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (response.ok && data.success) {
+        setStatusType("success");
+        setStatusMessage(data.message || "Message submitted successfully!");
+        setFormData({
+          firstName: "",
+          lastName: "",
+          email: "",
+          phone: "",
+          subject: "",
+          message: "",
+        });
+      } else {
+        setStatusType("error");
+        setStatusMessage(data.message || "Something went wrong. Please try again.");
+      }
+    } catch (err) {
+      setStatusType("error");
+      setStatusMessage("Something went wrong. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
     <>
@@ -283,6 +368,33 @@ export default function ContactPage(){
           transform: translateY(-1px);
         }
 
+        .submit-button:disabled {
+          opacity: 0.65;
+          cursor: not-allowed;
+          transform: none;
+        }
+
+        .form-status-message {
+          margin-top: 16px;
+          padding: 11px 16px;
+          border-radius: 6px;
+          font-size: 12px;
+          text-align: center;
+          font-weight: 600;
+        }
+
+        .form-status-message.success {
+          background-color: #e8f7ee;
+          color: #1b7a37;
+          border: 1px solid #bbf7d0;
+        }
+
+        .form-status-message.error {
+          background-color: #fde8e8;
+          color: #c81e1e;
+          border: 1px solid #fca5a5;
+        }
+
         /* ================= TABLET ================= */
 
         @media (max-width: 900px) {
@@ -481,9 +593,9 @@ export default function ContactPage(){
         </section>
 
 
-       <section>
-  <FAQ />
-</section>
+        <section>
+          <FAQ />
+        </section>
 
         {/* CONTACT */}
         <section className="contact-section">
@@ -580,19 +692,18 @@ export default function ContactPage(){
             <div className="message-area">
               <h2>Send us a Message</h2>
 
-              <form
-                onSubmit={(e) => {
-                  e.preventDefault();
-                  alert("Message submitted!");
-                }}
-              >
+              <form onSubmit={handleSubmit}>
                 <div className="form-grid">
 
                   <div className="form-group">
                     <label>First Name</label>
                     <input
                       type="text"
+                      name="firstName"
+                      value={formData.firstName}
+                      onChange={handleChange}
                       placeholder="Enter your First Name"
+                      required
                     />
                   </div>
 
@@ -600,7 +711,11 @@ export default function ContactPage(){
                     <label>Last Name</label>
                     <input
                       type="text"
+                      name="lastName"
+                      value={formData.lastName}
+                      onChange={handleChange}
                       placeholder="Enter your Last Name"
+                      required
                     />
                   </div>
 
@@ -608,7 +723,11 @@ export default function ContactPage(){
                     <label>Email Address</label>
                     <input
                       type="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleChange}
                       placeholder="Enter your Email Address"
+                      required
                     />
                   </div>
 
@@ -616,7 +735,11 @@ export default function ContactPage(){
                     <label>Phone Number</label>
                     <input
                       type="tel"
+                      name="phone"
+                      value={formData.phone}
+                      onChange={handleChange}
                       placeholder="Enter your Phone Number"
+                      required
                     />
                   </div>
 
@@ -624,14 +747,22 @@ export default function ContactPage(){
                     <label>Subject</label>
                     <input
                       type="text"
+                      name="subject"
+                      value={formData.subject}
+                      onChange={handleChange}
                       placeholder="Enter your Subject (Required)"
+                      required
                     />
                   </div>
 
                   <div className="form-group full">
                     <label>Message</label>
                     <textarea
+                      name="message"
+                      value={formData.message}
+                      onChange={handleChange}
                       placeholder="Write your Message..."
+                      required
                     />
                   </div>
 
@@ -640,9 +771,19 @@ export default function ContactPage(){
                 <button
                   type="submit"
                   className="submit-button"
+                  disabled={isSubmitting}
                 >
-                  Send Message
+                  {isSubmitting ? "Sending..." : "Send Message"}
                 </button>
+
+                {statusMessage && (
+                  <div
+                    className={`form-status-message ${statusType === "success" ? "success" : "error"}`}
+                    role="alert"
+                  >
+                    {statusMessage}
+                  </div>
+                )}
               </form>
             </div>
 

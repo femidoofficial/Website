@@ -4,7 +4,7 @@ import React, { useState } from "react";
 
 import HowWeWork from "../../components/HowWeWork.jsx";
 import DownloadSection from "../../components/DownloadSection.jsx";
-import FAQ from "../../components/FAQ.jsx";
+import FAQ from "../../components/faq.jsx";
 
 const TESTIMONIALS = [
   {
