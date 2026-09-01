@@ -1,13 +1,6 @@
-import { NextResponse, after } from "next/server";
-import dns from "dns";
+import { NextResponse } from "next/server";
 import { google } from "googleapis";
 import nodemailer from "nodemailer";
-
-try {
-  dns.setDefaultResultOrder?.("ipv4first");
-} catch (e) {
-  // Ignore if not supported in runtime
-}
 
 /**
  * Escapes HTML characters to prevent XSS / HTML injection in email templates
@@ -39,14 +32,9 @@ async function appendToGoogleSheet(data) {
   const spreadsheetId = process.env.GOOGLE_SHEET_ID;
 
   if (!clientEmail || !rawPrivateKey || !spreadsheetId) {
-    const missing = [];
-    if (!clientEmail) missing.push("GOOGLE_CLIENT_EMAIL");
-    if (!rawPrivateKey) missing.push("GOOGLE_PRIVATE_KEY");
-    if (!spreadsheetId) missing.push("GOOGLE_SHEET_ID");
-    throw new Error(`Google Sheets credentials missing in environment: ${missing.join(", ")}`);
+    throw new Error("Google Sheets credentials missing in environment.");
   }
 
-  // Handle escaped \n newlines in private key
   const privateKey = rawPrivateKey.replace(/\\n/g, "\n");
 
   const auth = new google.auth.JWT({
@@ -89,27 +77,6 @@ async function appendToGoogleSheet(data) {
   });
 }
 
-let cachedTransporter = null;
-
-function getTransporter(user, pass) {
-  if (
-    !cachedTransporter ||
-    cachedTransporter._user !== user ||
-    cachedTransporter._pass !== pass
-  ) {
-    cachedTransporter = nodemailer.createTransport({
-      service: "gmail",
-      auth: {
-        user,
-        pass,
-      },
-    });
-    cachedTransporter._user = user;
-    cachedTransporter._pass = pass;
-  }
-  return cachedTransporter;
-}
-
 /**
  * Sends notification email via Gmail SMTP
  */
@@ -119,13 +86,16 @@ async function sendEmailNotification(data) {
   const to = process.env.EMAIL_TO || "femidoofficial@gmail.com";
 
   if (!user || !pass) {
-    const missing = [];
-    if (!user) missing.push("EMAIL_USER");
-    if (!pass) missing.push("EMAIL_APP_PASSWORD");
-    throw new Error(`Gmail SMTP credentials missing in environment: ${missing.join(", ")}`);
+    throw new Error("Gmail credentials missing. Please set EMAIL_USER and EMAIL_APP_PASSWORD.");
   }
 
-  const transporter = getTransporter(user, pass);
+  const transporter = nodemailer.createTransport({
+    service: "gmail",
+    auth: {
+      user,
+      pass,
+    },
+  });
 
   const safeFirstName = escapeHtml(data.firstName);
   const safeLastName = escapeHtml(data.lastName);
@@ -247,7 +217,13 @@ export async function POST(request) {
     }
 
     // Basic length sanity limits
-    if (firstName.length > 100 || lastName.length > 100 || subject.length > 200 || phone.length > 30 || message.length > 5000) {
+    if (
+      firstName.length > 100 ||
+      lastName.length > 100 ||
+      subject.length > 200 ||
+      phone.length > 30 ||
+      message.length > 5000
+    ) {
       return NextResponse.json(
         { success: false, message: "Input exceeds permissible length limits." },
         { status: 400 }
@@ -263,7 +239,6 @@ export async function POST(request) {
       message: message.trim(),
     };
 
-    const tasks = [];
     const hasGoogleSheetsConfig =
       Boolean(process.env.GOOGLE_CLIENT_EMAIL?.trim()) &&
       Boolean(process.env.GOOGLE_PRIVATE_KEY?.trim()) &&
@@ -273,38 +248,27 @@ export async function POST(request) {
       Boolean(process.env.EMAIL_USER?.trim()) &&
       Boolean(process.env.EMAIL_APP_PASSWORD?.trim());
 
-    if (hasGoogleSheetsConfig) {
-      tasks.push(appendToGoogleSheet(sanitizedData));
-    } else {
-      console.warn("[Contact API] Google Sheets credentials not configured. Skipping Sheets append.");
-    }
-
-    if (hasEmailConfig) {
-      tasks.push(sendEmailNotification(sanitizedData));
-    } else {
-      console.warn("[Contact API] Gmail SMTP credentials not configured. Skipping email send.");
-    }
-
-    if (tasks.length === 0) {
-      throw new Error(
-        "Neither Google Sheets nor Gmail SMTP credentials have been configured in .env.local."
+    if (!hasGoogleSheetsConfig && !hasEmailConfig) {
+      return NextResponse.json(
+        {
+          success: false,
+          message:
+            "Email service is not configured yet. Please add EMAIL_USER and EMAIL_APP_PASSWORD in Vercel Environment Variables.",
+        },
+        { status: 500 }
       );
     }
 
-    // Dispatch active integrations in background without blocking the user response
-    if (typeof after === "function") {
-      after(async () => {
-        try {
-          await Promise.all(tasks);
-        } catch (bgError) {
-          console.error("[Contact API Background Error]:", bgError);
-        }
-      });
-    } else {
-      Promise.all(tasks).catch((bgError) => {
-        console.error("[Contact API Background Error]:", bgError);
-      });
+    const tasks = [];
+    if (hasGoogleSheetsConfig) {
+      tasks.push(appendToGoogleSheet(sanitizedData));
     }
+    if (hasEmailConfig) {
+      tasks.push(sendEmailNotification(sanitizedData));
+    }
+
+    // Await delivery so the user gets true confirmation
+    await Promise.all(tasks);
 
     return NextResponse.json(
       {
@@ -314,14 +278,12 @@ export async function POST(request) {
       { status: 200 }
     );
   } catch (error) {
-    // Log detailed diagnostics strictly on the server
     console.error("[Contact Form API Error]:", error);
 
-    // Return a safe, user-friendly error response without exposing sensitive details
     return NextResponse.json(
       {
         success: false,
-        message: "Something went wrong. Please try again.",
+        message: error?.message || "Something went wrong. Please try again.",
       },
       { status: 500 }
     );
