@@ -157,6 +157,7 @@ export default function ContactPage() {
           display: flex;
           justify-content: center;
           align-items: center;
+          
         }
 
         .contact-hero-image {
@@ -165,6 +166,7 @@ export default function ContactPage() {
           height: auto;
           object-fit: contain;
           display: block;
+            margin-top: 30px;
         }
 
 
@@ -537,8 +539,23 @@ export default function ContactPage() {
 
         /* ================= SMALL MOBILE ================= */
 
+ @media (max-width: 600px) {
+         .contact-hero-section {
+            padding: 22px 20px 10px;
+            margin-top: 20px;
+          }
+
+
+
+
+
+
+
         @media (max-width: 400px) {
-          .contact-hero-section,
+         .contact-hero-section {
+            padding: 22px 20px 10px;
+            margin-top: 20px;
+          }
           
           .contact-section {
             padding-left: 15px;
@@ -623,7 +640,7 @@ export default function ContactPage() {
                   <div>
                     <h4>Head Office</h4>
                     <p>
-                      138, Uday Nagar, Kanadia road,
+                      139, Uday Nagar, Kanadia road,
                       <br />
                       Indore, 452016
                     </p>
@@ -639,7 +656,7 @@ export default function ContactPage() {
 
                   <div>
                     <h4>Call Us</h4>
-                    <p>+91 8999844417</p>
+                    <p>+91 8989494417</p>
                   </div>
                 </div>
 
@@ -670,9 +687,21 @@ export default function ContactPage() {
                   </svg>
                 </span>
                 <span className="social-icon" aria-label="Instagram">
-                  <svg viewBox="0 0 24 24" aria-hidden="true">
-                    <path fillRule="evenodd" d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7Zm5 3.5A4.5 4.5 0 1 1 12 16.5 4.5 4.5 0 0 1 12 7.5Zm0 2A2.5 2.5 0 1 0 12 14.5 2.5 2.5 0 0 0 12 9.5ZM17.5 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2Z" clipRule="evenodd" />
-                  </svg>
+                  <a
+  href="https://www.instagram.com/femidoapp?igsi=ZTV3Ym84bzhkamdm"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="social-icon"
+  aria-label="Instagram"
+>
+  <svg viewBox="0 0 24 24" aria-hidden="true">
+    <path
+      fillRule="evenodd"
+      d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7Zm5 3.5A4.5 4.5 0 1 1 12 16.5 4.5 4.5 0 0 1 12 7.5Zm0 2A2.5 2.5 0 1 0 12 14.5 2.5 2.5 0 0 0 12 9.5ZM17.5 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2Z"
+      clipRule="evenodd"
+    />
+  </svg>
+</a>
                 </span>
                 <span className="social-icon" aria-label="WhatsApp">
                   <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -681,9 +710,17 @@ export default function ContactPage() {
                   </svg>
                 </span>
                 <span className="social-icon" aria-label="LinkedIn">
-                  <svg viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M5 8H2v12h3V8Zm.2-3.5A1.7 1.7 0 1 1 1.8 4.5a1.7 1.7 0 0 1 3.4 0ZM22 13.1c0-3.6-1.9-5.3-4.5-5.3-2.1 0-3 1.2-3.5 2V8h-3v12h3v-6.7c0-1.8.3-3.5 2.5-3.5 2.1 0 2.2 2 2.2 3.6V20h3.3v-6.9Z" />
-                  </svg>
+                  <a
+  href="https://www.linkedin.com/showcase/femido/"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="social-icon"
+  aria-label="LinkedIn"
+>
+  <svg viewBox="0 0 24 24" aria-hidden="true">
+    <path d="M5 8H2v12h3V8Zm.2-3.5A1.7 1.7 0 1 1 1.8 4.5a1.7 1.7 0 0 1 3.4 0ZM22 13.1c0-3.6-1.9-5.3-4.5-5.3-2.1 0-3 1.2-3.5 2V8h-3v12h3v-6.7c0-1.8.3-3.5 2.5-3.5 2.1 0 2.2 2 2.2 3.6V20h3.3v-6.9Z" />
+  </svg>
+</a>
                 </span>
               </div>
             </div>

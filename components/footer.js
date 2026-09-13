@@ -34,7 +34,7 @@ export default function Footer() {
   </a>
 
   {/* Instagram */}
-  <a href="#" aria-label="Instagram">
+  <a href="https://www.instagram.com/femidoapp?igsi=ZTV3Ym84bzhkamdm" aria-label="Instagram">
     <svg viewBox="0 0 24 24" aria-hidden="true">
       <rect x="3" y="3" width="18" height="18" rx="5" />
       <circle cx="12" cy="12" r="4" />
@@ -54,7 +54,7 @@ export default function Footer() {
   </a>
 
   {/* LinkedIn */}
-  <a href="#" aria-label="LinkedIn">
+  <a href="https://www.linkedin.com/showcase/femido/" aria-label="LinkedIn">
     <svg viewBox="0 0 24 24" aria-hidden="true">
       <path d="M5.2 3.5a2.2 2.2 0 1 1-4.4 0 2.2 2.2 0 0 1 4.4 0zM1 8h4.4v14H1V8zm7 0h4.2v1.9h.1c.6-1.1 2-2.2 4.1-2.2 4.4 0 5.2 2.9 5.2 6.7V22h-4.4v-6.8c0-1.6 0-3.7-2.3-3.7-2.2 0-2.6 1.8-2.6 3.6V22H8V8z" />
     </svg>
@@ -167,6 +167,14 @@ export default function Footer() {
 
           <Link href="/support">
             Support Partner
+          </Link>
+
+<Link href="/customer-terms">
+            User Terms
+          </Link>
+
+          <Link href="/captain-terms">
+            Captain Terms
           </Link>
 
         </div>

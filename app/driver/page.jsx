@@ -332,10 +332,11 @@ export default function DriversPage() {
         }
 
         .driver-hero-image img {
-          width: 100%;
+          width: 75%;
           height: 100%;
           object-fit: contain;
           object-position: right bottom;
+         margin-right: 0px;
         }
 
 

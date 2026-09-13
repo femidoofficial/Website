@@ -16,7 +16,7 @@ const RidesSection = () => {
           </div>
 
           <img
-            src="/assets/services/activa.png"
+            src="/assets/services/new activa.png"
             alt="Activa"
             className="ride-image activa-image"
           />
@@ -33,7 +33,7 @@ const RidesSection = () => {
           </div>
 
           <img
-            src="/assets/services/auto.png"
+            src="/assets/services/new auto.png"
             alt="Auto"
             className="ride-image auto-image"
           />
@@ -50,7 +50,7 @@ const RidesSection = () => {
           </div>
 
           <img
-            src="/assets/services/E-Rickshaw.png"
+            src="/assets/services/e new.png"
             alt="E-Rickshaw"
             className="ride-image erickshaw-image"
           />
@@ -67,7 +67,7 @@ const RidesSection = () => {
           </div>
 
           <img
-            src="/assets/services/cab.png"
+            src="/assets/services/newcab.png"
             alt="Cab"
             className="ride-image cab-image"
           />

@@ -718,8 +718,9 @@ export default function ServicesPage() {
         @media (max-width: 400px) {
 
           .services-hero {
-            padding-left: 15px;
+            padding-left: 5px;
             padding-right: 15px;
+
           }
 
           .hero-text h1 {
@@ -731,11 +732,12 @@ export default function ServicesPage() {
           }
 
           .hero-vehicles {
-            height: 220px;
+            height: 180px;
           }
 
           .vehicle.auto {
-            width: 130px;
+            width: 390px;
+            
           }
 
           .vehicle.scooty {
@@ -749,6 +751,7 @@ export default function ServicesPage() {
           .ride-section {
             padding-left: 15px;
             padding-right: 15px;
+           
           }
 
           .ride-section > h2 {

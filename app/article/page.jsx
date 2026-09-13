@@ -458,7 +458,7 @@ export default function SafetyTipsPage() {
 
             <div className="blog-author">
               <img
-                src="/assets/blog/group 22.png"
+                src="/assets/blog/Group 22.png"
                 alt="Shivani Thakur"
                 className="author-image"
               />

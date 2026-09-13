@@ -12,7 +12,7 @@ export default function Navbar() {
     <nav className="navbar">
       <div className="logo">
         <Link href="/" onClick={close}>
-          <img src="/assets/Logo/newlogo.png" alt="FemiDo Logo" />
+          <img src="/assets/Logo/femido.png" alt="FemiDo Logo" />
         </Link>
       </div>
 

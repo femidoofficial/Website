@@ -719,11 +719,20 @@ export default function PartnerPage() {
           }
 
           .ways-section {
-            height: 470px;
+          
+            height: 300px;
           }
 
           .pink-support-shape {
-            height: 350px;
+          width: 400px;
+            height: 400px;
+          }
+
+          .ways-content {
+            width: 100%;
+            padding: 5px 20px;
+            left: 10%;
+            top: 180px;
           }
 
           .ways-content h2 {
@@ -731,17 +740,19 @@ export default function PartnerPage() {
           }
 
           .ways-content p {
-            font-size: 12px;
+            font-size: 13.5px;
+            line-height: 1.55;
           }
 
           .ways-image {
-            width: 245px;
+
+top:50%;
+          width: 245px;
             height: 185px;
           }
 
           .support-options {
-            padding-left: 18px;
-            padding-right: 18px;
+            padding: 10px 20px 55px;
              width: 100%;
   max-width: none;
           }
